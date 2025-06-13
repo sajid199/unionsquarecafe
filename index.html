@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Square Cafe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: #f5f5f0;
+            padding: 20px 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 30px;
+            background-color: #c8102e;
+            margin: 0 auto 10px;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .logo h1 {
+            color: #c8102e;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            border-bottom-color: #c8102e;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1002;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            width: 25px;
+            height: 20px;
+            justify-content: space-between;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #f5f5f0;
+            z-index: 1001;
+            padding: 80px 40px 40px;
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #c8102e;
+            cursor: pointer;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            padding: 10px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23e8e8e0" width="1200" height="800"/><rect fill="%23d4d4cc" x="0" y="300" width="1200" height="200"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .wine-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30 10 h40 v15 l-10 25 v35 a5 5 0 0 1 -10 0 v-35 l-10 -25 z M25 50 h50" fill="none" stroke="%23333" stroke-width="2"/><circle cx="75" cy="25" r="8" fill="none" stroke="%23333" stroke-width="2"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .content-section h3 {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: linear-gradient(45deg, #ddd, #bbb);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .info-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .info-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-links a {
+            text-decoration: underline;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #c8102e;
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #c8102e;
+            font-weight: bold;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact {
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-powered {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Popup Modal */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .popup-content {
+            background-color: white;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: #c8102e;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .popup-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300"><rect fill="%23654321" width="600" height="300"/><rect fill="%23543211" x="50" y="150" width="500" height="100"/><circle fill="%23ffffff" cx="300" cy="200" r="30"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .popup-text {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .popup-text h2 {
+            color: #c8102e;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .popup-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .popup-button {
+            background-color: transparent;
+            border: 2px solid #c8102e;
+            color: #c8102e;
+            padding: 15px 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .popup-button:hover {
+            background-color: #c8102e;
+            color: white;
+        }
+
+        .reserve-btn {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #c8102e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            z-index: 100;
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .popup-text h2 {
+                font-size: 2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .info-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .reserve-btn {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 50vh;
+            }
+
+            .popup-content {
+                width: 95%;
+                margin: 20px;
+            }
+
+            .popup-text {
+                padding: 30px 20px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <div class="popup-image"></div>
+            <div class="popup-text">
+                <h2>CHEERS TO 40 YEARS!</h2>
+                <p>Join us in celebrating four incredible decades.</p>
+                <button class="popup-button" onclick="closePopup()">Party With Us</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <h1>UNION SQUARE CAFE</h1>
+        </div>
+        
+        <nav class="nav">
+            <a href="#" class="nav-dropdown">Our Story ▼</a>
+            <a href="#">Menus</a>
+            <a href="#">Hours & Location</a>
+            <a href="#">Gallery</a>
+            <a href="#">Private Dining</a>
+            <a href="#" class="nav-dropdown">Shop ▼</a>
+            <a href="#">40th Anniversary</a>
+            <a href="#" class="active">Reserve</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileNav" class="mobile-nav">
+        <button class="mobile-nav-close" onclick="toggleMobileMenu()">&times;</button>
+        <div class="mobile-nav-links">
+            <a href="#">Our Story ▼</a>
+            <a href="#">Menus</a>
+            <a href="#">Hours & Location</a>
+            <a href="#">Gallery</a>
+            <a href="#">Private Dining</a>
+            <a href="#">Shop ▲</a>
+            <div style="margin-left: 20px;">
+                <a href="#" style="font-size: 1rem; color: #666;">Nationwide Shipping</a>
+                <a href="#" style="font-size: 1rem; color: #666;">Pre-Order & Pick Up</a>
+                <a href="#" style="font-size: 1rem; color: #666;">Gift Cards</a>
+            </div>
+            <a href="#">40th Anniversary</a>
+            <a href="#">Press</a>
+            <a href="#">Careers</a>
+            <a href="#">Terms and Conditions</a>
+            <div style="margin-top: 40px; color: #666;">
+                <p>101 E 19th St, New York, NY 10003</p>
+                <p>(212) 243-4020</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Union Square Cafe</h2>
+            <p>A neighborhood restaurant experience centered around warmth, comfort, celebration, and hospitality.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="content-section">
+            <div class="wine-icon"></div>
+            <h3>
+                Union Square Cafe is a neighborhood restaurant founded in 1985 by Danny Meyer. 
+                Today, helmed by Executive Chef Lena Ciardullo, it remains one of New York's most 
+                essential restaurants. Our menu draws inspiration from the Union Square Greenmarket 
+                and the experience is centered around warmth, comfort, celebration, and hospitality. 
+                At Union Square Cafe, you will always find a place to call home.
+            </h3>
+            
+            <div class="gallery">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h3>
+                Union Square Cafe is open from 11:30am on weekdays and 11am on weekends. 
+                We serve lunch, aperitivo hour, dinner, and weekend brunch. You can find us 
+                on the southeast corner of 19th & Park Avenue.
+            </h3>
+            <div class="info-links">
+                <a href="#">Menus</a>
+                <a href="#">Hours & Location</a>
+                <a href="#">Reserve</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">@</a>
+            <a href="#" class="social-icon">📷</a>
+        </div>
+        
+        <div class="footer-links">
+            <a href="#">Press</a>
+            <a href="#">Careers</a>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">101 E 19th St, New York, NY 10003</a>
+            <a href="#">(212) 243-4020</a>
+            <a href="#">Email Signup</a>
+        </div>
+        
+        <div class="footer-powered">
+            powered by BentoBox
+        </div>
+    </footer>
+
+    <!-- Mobile Reserve Button -->
+    <a href="#" class="reserve-btn">
+        <div style="margin-bottom: 5px;">🍷</div>
+        Reserve
+    </a>
+
+    <script>
+        // Popup functionality
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.classList.add('hidden');
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 300);
+        }
+
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Show popup on page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const popup = document.getElementById('popup');
+                popup.style.display = 'flex';
+            }, 1000);
+        });
+
+        // Close popup when clicking outside
+        document.getElementById('popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileNav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!mobileNav.contains(e.target) && !toggle.contains(e.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(245, 245, 240, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = '#f5f5f0';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
