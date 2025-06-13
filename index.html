@@ -583,6 +583,27 @@
         .gallery {
             grid-template-columns: 1fr;
         }
+        @media (max-width: 768px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .gallery-item {
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
     }
     </style>
 </head>
