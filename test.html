@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Square Cafe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        .site-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .site-header-desktop {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .site-logo img {
+            height: 40px;
+        }
+        
+        /* Navigation */
+        .site-nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-nav-menu li {
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        .site-nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #000;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+        
+        .c-one-col--text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .c-two-col--freeform {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col-md-6 {
+            width: 50%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        
+        .image-thumbnail {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #f5f5f5;
+            padding: 40px 0;
+        }
+        
+        .social-accounts {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .social-accounts li {
+            margin: 0 10px;
+        }
+        
+        .social-accounts a {
+            color: #333;
+            font-size: 20px;
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 767px) {
+            .col-md-6 {
+                width: 100%;
+            }
+            
+            .hero {
+                height: 60vh;
+            }
+            
+            .site-nav-menu {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="has-hero-intent has-mobi-footer index-template ae-homepage">
+    <div id="ae_enabled_site" class="ae-blurb-noaudio" role="status" aria-live="polite" style="display: none" data-nosnippet="">
+        <div><p data-modulename="launcher">This website is AudioEye enabled and is being optimized for accessibility.</p></div>
+    </div>
+    
+    <div class="site-notifications">
+        <div id="banner-alert-component" class="banner-max-height-animation"></div>
+    </div>
+
+    <header class="site-header">
+        <a href="#main-content" class="skip">Skip to main content</a>
+        <div class="site-header-desktop site-header-desktop--centered">
+            <div class="site-header-desktop-primary" data-header-sticky="" style="">
+                <div class="container" tabindex="0">
+                    <div class="site-logo">
+                        <a class="site-logo__btn" href="/">
+                            <img class="site-logo__expanded" src="https://images.getbento.com/accounts/73872f6245d057f16d798619e11a0945/media/images/48906usq-desktop.png" alt="Union Square Cafe Homepage" loading="eager">
+                        </a>
+                    </div>
+
+                    <nav class="site-nav" aria-label="Main">
+                        <ul class="site-nav-menu" data-menu-type="desktop">
+                            <li class="site-nav-submenu">
+                                <button type="button" class="site-nav-link site-nav-submenu-toggle" aria-expanded="false" aria-controls="SubMenu-1" aria-label="Expand Our Story sub-menu">
+                                    <span class="sr-only">Our Story sub-menu</span>
+                                    Our Story
+                                </button>
+                                <div id="SubMenu-1" class="sub-menu">
+                                    <ul>
+                                        <li><a href="/about/">About</a></li>
+                                        <li><a href="/community/">Community</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="site-nav-link" href="/menus/" aria-label="Menus" role="button">Menus</a></li>
+                            <li><a class="site-nav-link" href="/location/union-square-cafe/" aria-label="Hours &amp; Location" role="button">Hours &amp; Location</a></li>
+                            <li><a class="site-nav-link" href="/gallery/" aria-label="Gallery" role="button">Gallery</a></li>
+                            <li><a class="site-nav-link" href="/private-dining/" aria-label="Private Dining" role="button">Private Dining</a></li>
+                            <li class="site-nav-submenu">
+                                <button type="button" class="site-nav-link site-nav-submenu-toggle" aria-expanded="false" aria-controls="SubMenu-6" aria-label="Expand Shop sub-menu">
+                                    <span class="sr-only">Shop sub-menu</span>
+                                    Shop
+                                </button>
+                                <div id="SubMenu-6" class="sub-menu">
+                                    <ul>
+                                        <li><a href="https://www.goldbelly.com/union-square-cafe" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message">Nationwide Shipping</a></li>
+                                        <li><a href="/catering-store-v2/">Pre-Order &amp; Pick Up</a></li>
+                                        <li><a href="https://www.ushg.com/giftcards/?utm_source=web&amp;utm_medium=footer&amp;utm_campaign=gift_cards&amp;utm_content=usc" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message">Gift Cards</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="site-nav-link" href="/40th-anniversary/" aria-label="40th Anniversary" role="button">40th Anniversary</a></li>
+                            <li><a href="https://www.sevenrooms.com/reservations/unionsquarecafe/web" class="btn btn-brand" target="_blank" rel="noopener" aria-label="Reserve" role="button">Reserve</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="site-content">
+        <div class="site-header-spacer-desktop" aria-hidden="true" style="height: 165.479px;"></div>
+        <div class="site-header-spacer-mobile" aria-hidden="true" style="height:106px;"></div>
+
+        <main class="site-content__main page-id--878272">
+            <h1 class="sr-only">Homepage</h1>
+            <span id="main-content" class="sr-only">Main content starts here, tab to start navigating</span>
+            
+            <section id="hero" class="hero hero--no-content hero--gallery hero--fullheight revealable revealed" style="background-image: url('https://images.getbento.com/accounts/73872f6245d057f16d798619e11a0945/media/images/27692USC_-_Space_-_FOH_Activated_-_Guests_-_Peter_Garritano_7.jpg');">
+                <!-- Hero content would go here -->
+            </section>
+
+            <section class="c-one-col--text content container revealable c-one-col--text--1 c-one-col--text--odd" tabindex="0">
+                <p><img src="https://images.getbento.com/accounts/73872f6245d057f16d798619e11a0945/media/images/USC_ILLOS-03_2.png?w=1000&amp;fit=max&amp;auto=compress,format&amp;h=1000" class="fr-fic fr-dib" style="width: 100px;"></p>
+                <p>Union Square Cafe is a neighborhood restaurant founded in 1985 by Danny Meyer. Today, helmed by Executive Chef Lena Ciardullo, it remains one of New York's most essential restaurants. Our menu draws inspiration from the Union Square Greenmarket and the experience is centered around warmth, comfort, celebration, and hospitality. At Union Square Cafe, you will always find a place to call home.</p>
+            </section>
+
+            <section class="c-two-col--freeform content container c-two-col-thumbs revealable c-two-col--freeform--1 c-two-col--freeform--odd">
+                <div class="row">
+                    <div class="col-md-6 col-md-6--odd" tabindex="0">
+                        <div class="image-thumbnail" style="background-image: url('https://images.getbento.com/accounts/73872f6245d057f16d798619e11a0945/media/images/741351.jpg?w=5400&amp;fit=max&amp;auto=compress,format&amp;cs=origin');">
+                            <img class="sr-only" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-6--even" tabindex="0">
+                        <div class="image-thumbnail" style="background-image: url('https://images.getbento.com/accounts/73872f6245d057f16d798619e11a0945/media/images/468892.png?w=5400&amp;fit=max&amp;auto=compress,format&amp;cs=origin');">
+                            <img class="sr-only" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="c-two-col--freeform content container c-two-col-thumbs revealable c-two-col--freeform--2 c-two-col--freeform--even c-two-col--freeform--last c-two-col--freeform--pair">
+                <div class="row">
+                    <div class="col-md-6 col-md-6--odd" tabindex="0">
+                        <div class="image-thumbnail" style="background-image: url('https://images.getbento.com/accounts/73872f6245d057f16d798619e11a0945/media/images/801073.jpg?w=5400&amp;fit=max&amp;auto=compress,format&amp;cs=origin');">
+                            <img class="sr-only" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-6--even col-md-6--last" tabindex="0">
+                        <div class="image-thumbnail" style="background-image: url('https://images.getbento.com/accounts/73872f6245d057f16d798619e11a0945/media/images/193994.jpg?w=5400&amp;fit=max&amp;auto=compress,format&amp;cs=origin');">
+                            <img class="sr-only" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="c-one-col--text content container revealable c-one-col--text--2 c-one-col--text--even c-one-col--text--last" tabindex="0">
+                <p>Union Square Cafe is open from 11:30am on weekdays and 11am on weekends. We serve lunch, aperitivo hour, dinner, and weekend brunch. You can find us on the southeast corner of 19th &amp; Park Avenue.</p>
+                <p>
+                    <a href="/menus/">Menus</a>&nbsp; &nbsp; 
+                    <a href="/location/union-square-cafe/">Hours &amp; Location</a>&nbsp; &nbsp;
+                    <a href="https://www.sevenrooms.com/reservations/unionsquarecafe/web" rel="noopener noreferrer" target="_blank" aria-describedby="audioeye_new_window_message">Reserve</a>&nbsp;
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="site-footer-desktop site-footer-desktop--show">
+            <div class="site-footer-desktop-primary">
+                <div class="site-footer-desktop-primary__container container">
+                    <ul class="social-accounts">
+                        <li><a href="https://www.facebook.com/unionsquarecafe" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message"><span class="fa fa-facebook" aria-hidden="true"></span><span class="sr-only">Facebook</span></a></li>
+                        <li><a href="http://twitter.com/UnionSquareCafe" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message"><span class="fa fa-twitter" aria-hidden="true"></span><span class="sr-only">Twitter</span></a></li>
+                        <li><a href="https://instagram.com/unionsquarecafe/" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message"><span class="fa fa-instagram" aria-hidden="true"></span><span class="sr-only">Instagram</span></a></li>
+                    </ul>
+                    
+                    <nav class="site-nav" aria-label="Footer">
+                        <ul class="site-nav-menu">
+                            <li><a class="site-nav-link" href="/press/">Press</a></li>
+                            <li><a class="site-nav-link" href="/careers/">Careers</a></li>
+                            <li><a class="site-nav-link" href="/terms-and-conditions/">Terms and Conditions</a></li>
+                            <li><a class="site-nav-link" href="https://goo.gl/maps/PpAfH38nMhjRsCPaA" target="_blank" rel="noopener">101 E 19th St, New York, NY 10003</a></li>
+                            <li><a class="site-nav-link" href="tel:2122434020">(212) 243-4020<span style="display: none;" class="ae-compliance-indent ae-reader-visible"> Phone number </span></a></li>
+                            <li><a href="https://www.sevenrooms.com/explore/unionsquarecafe/subscription" class="btn btn-brand-alt" target="_parent" aria-label="Email Signup" role="button">Email Signup</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="site-footer-desktop-secondary">
+                <div class="site-powered-by">
+                    <a href="https://getbento.com/?utm_source=footer&amp;utm_campaign=unionsquarecafe.com" target="_blank" rel="noopener" aria-describedby="audioeye_new_window_message">powered by BentoBox</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Mobile menu toggle functionality would go here
+        $(document).ready(function() {
+            // Example: Mobile menu toggle
+            $('.nav-toggle-btn').click(function() {
+                $('#SiteHeaderMobilePanel').toggleClass('active');
+                $(this).attr('aria-expanded', $(this).attr('aria-expanded') === 'false' ? 'true' : 'false');
+            });
+        });
+    </script>
+</body>
+</html>
