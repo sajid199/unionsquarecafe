@@ -401,7 +401,7 @@
         color: #555;
     }
 
-    /* Team Section */
+    /* Team Section - Improved for mobile */
     .team-section {
         text-align: center;
         margin-bottom: 80px;
@@ -417,7 +417,7 @@
     .team-grid {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 30px;
         flex-wrap: wrap;
         max-width: 100%;
     }
@@ -425,17 +425,24 @@
     .team-member {
         text-align: center;
         cursor: pointer;
-        flex: 0 0 calc(33.333% - 20px);
-        max-width: calc(33.333% - 20px);
+        flex: 0 0 calc(33.333% - 30px);
+        max-width: calc(33.333% - 30px);
         box-sizing: border-box;
+        transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
     }
 
     .team-member img {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        max-width: 250px;
+        height: 250px;
         border-radius: 0;
         object-fit: cover;
-        margin-bottom: 20px;
+        margin: 0 auto 20px;
+        display: block;
     }
 
     .team-member h4 {
@@ -449,7 +456,7 @@
         color: #555;
     }
 
-    /* Popup for Team Members */
+    /* Popup for Team Members - Improved for mobile */
     .popup {
         display: none;
         position: fixed;
@@ -461,16 +468,20 @@
         z-index: 2000;
         justify-content: center;
         align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .popup-content {
         background-color: #FFF6ED;
         padding: 40px;
         max-width: 600px;
-        width: 90%;
+        width: 100%;
         position: relative;
         border-radius: 8px;
         text-align: center;
+        max-height: 90vh;
+        overflow-y: auto;
     }
 
     .popup-content h4 {
@@ -483,6 +494,7 @@
         font-size: 1rem;
         color: #555;
         margin-bottom: 20px;
+        text-align: left;
     }
 
     .popup-close {
@@ -492,6 +504,9 @@
         font-size: 30px;
         color: #c8102e;
         cursor: pointer;
+        background: none;
+        border: none;
+        z-index: 10;
     }
 
     /* History Section */
@@ -732,6 +747,13 @@
     }
 
     /* Responsive Design */
+    @media (max-width: 992px) {
+        .team-member {
+            flex: 0 0 calc(50% - 30px);
+            max-width: calc(50% - 30px);
+        }
+    }
+
     @media (max-width: 768px) {
         .nav {
             display: none;
@@ -766,6 +788,7 @@
         .team-grid {
             flex-direction: column;
             align-items: center;
+            gap: 40px;
         }
 
         .team-member {
@@ -774,8 +797,8 @@
         }
 
         .team-member img {
-            width: 150px;
-            height: 150px;
+            width: 250px;
+            height: 250px;
         }
 
         .award-item {
@@ -798,6 +821,18 @@
         .recipe-image {
             max-width: 300px;
         }
+
+        /* Improved popup for mobile */
+        .popup-content {
+            padding: 30px 20px;
+            max-height: 85vh;
+        }
+
+        .popup-close {
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+        }
     }
 
     @media (max-width: 480px) {
@@ -806,8 +841,8 @@
         }
 
         .team-member img {
-            width: 120px;
-            height: 120px;
+            width: 200px;
+            height: 200px;
         }
 
         .award-item img {
@@ -827,7 +862,7 @@
         }
 
         .popup-content {
-            padding: 20px;
+            padding: 25px 15px;
         }
 
         .carousel-item img {
@@ -872,7 +907,7 @@
 
             </div>
             <div class="nav-item">
-                <a href="#">Private Dining</a>
+                <a href="private_dining.html">Private Dining</a>
             </div>
             <div class="nav-item">
                 <a href="#">Shop</a>
@@ -920,10 +955,10 @@
             <a href="hours_location.html">Hours & Location</a>
         </div>
         <div class="mobile-nav-item">
-            <a href="#">Gallery</a>
+            <a href="gallary.html">Gallery</a>
         </div>
         <div class="mobile-nav-item">
-            <a href="#">Private Dining</a>
+            <a href="about.html">Private Dining</a>
         </div>
         <div class="mobile-nav-item">
             <a href="#">Shop</a>
@@ -971,13 +1006,13 @@
     <main class="container">
         <section class="content-section">
             <p>
-                Union Square Cafe—the flagship restaurant that launched Danny Meyer’s Union Square Hospitality Group—has been one of the country’s most beloved dining institutions for 40 years.
+                Union Square Cafe—the flagship restaurant that launched Danny Meyer's Union Square Hospitality Group—has been one of the country's most beloved dining institutions for 40 years.
             </p>
             <p>
                 Founded in 1985, Union Square Cafe pioneered a new way of dining, drawing inspiration from the Union Square Greenmarket and showcasing the best local ingredients in a casual and contemporary dining room characterized by warmth and hospitality. Having trained and mentored scores of restaurant professionals for over three decades, Union Square Cafe is the birthplace of a generation of renowned restaurants, chefs, and restaurateurs.
             </p>
             <p>
-                The restaurant has won five James Beard Awards and ranked in first place on Zagat Survey’s Most Popular Restaurant list an unprecedented nine times.
+                The restaurant has won five James Beard Awards and ranked in first place on Zagat Survey's Most Popular Restaurant list an unprecedented nine times.
             </p>
         </section>
 
@@ -1016,20 +1051,20 @@
         <!-- Popups for Team Members -->
         <div id="lena-popup" class="popup">
             <div class="popup-content">
-                <span class="popup-close" onclick="closePopup('lena')">×</span>
+                <button class="popup-close" onclick="closePopup('lena')">×</button>
                 <h4>Lena Ciardullo</h4>
                 <p>Executive Chef</p>
                 <p>
-                    Lena Ciardullo is the Executive Chef of Union Square Cafe. Raised in Naperville, Illinois, Lena attended the University of Illinois where she received her Bachelor’s Degree in Communications. During her undergraduate years, Lena studied abroad in Rome, where her love of food and hospitality was ignited. Upon her return, Lena found her first job in the kitchen and hasn’t looked back since.
+                    Lena Ciardullo is the Executive Chef of Union Square Cafe. Raised in Naperville, Illinois, Lena attended the University of Illinois where she received her Bachelor's Degree in Communications. During her undergraduate years, Lena studied abroad in Rome, where her love of food and hospitality was ignited. Upon her return, Lena found her first job in the kitchen and hasn't looked back since.
                 </p>
                 <p>
-                    In 2009, Lena received her Associates Degree in Culinary Arts from The Culinary Institute of America and immediately joined the opening team of Maialino, USHG’s Roman-inspired trattoria. She later moved on to Gramercy Tavern where she worked as a tournant, before joining the Marta team in 2014. Throughout her time at Marta, Lena moved through the ranks, starting as a sous chef and ultimately assuming the role of Executive Chef of Marta, Caffe Marchio, and Vini e Fritti in 2018, before joining the Union Square Cafe team in 2019.
+                    In 2009, Lena received her Associates Degree in Culinary Arts from The Culinary Institute of America and immediately joined the opening team of Maialino, USHG's Roman-inspired trattoria. She later moved on to Gramercy Tavern where she worked as a tournant, before joining the Marta team in 2014. Throughout her time at Marta, Lena moved through the ranks, starting as a sous chef and ultimately assuming the role of Executive Chef of Marta, Caffe Marchio, and Vini e Fritti in 2018, before joining the Union Square Cafe team in 2019.
                 </p>
             </div>
         </div>
         <div id="katlyn-popup" class="popup">
             <div class="popup-content">
-                <span class="popup-close" onclick="closePopup('katlyn')">×</span>
+                <button class="popup-close" onclick="closePopup('katlyn')">×</button>
                 <h4>Katlyn Mergies</h4>
                 <p>General Manager</p>
                 <p>
@@ -1039,17 +1074,17 @@
         </div>
         <div id="dorgan-popup" class="popup">
             <div class="popup-content">
-                <span class="popup-close" onclick="closePopup('dorgan')">×</span>
+                <button class="popup-close" onclick="closePopup('dorgan')">×</button>
                 <h4>Dorgan Velez Vega</h4>
                 <p>Beverage Director</p>
                 <p>
-                    Dorgan Velez Vega is the Beverage Director at Union Square Cafe. With a deep knowledge of wine and spirits, Dorgan has curated an exceptional beverage program that complements the restaurant’s culinary offerings. His expertise enhances the dining experience for every guest.
+                    Dorgan Velez Vega is the Beverage Director at Union Square Cafe. With a deep knowledge of wine and spirits, Dorgan has curated an exceptional beverage program that complements the restaurant's culinary offerings. His expertise enhances the dining experience for every guest.
                 </p>
             </div>
         </div>
         <div id="toni-popup" class="popup">
             <div class="popup-content">
-                <span class="popup-close" onclick="closePopup('toni')">×</span>
+                <button class="popup-close" onclick="closePopup('toni')">×</button>
                 <h4>Toni Weiburg</h4>
                 <p>Executive Pastry Chef</p>
                 <p>
@@ -1059,11 +1094,11 @@
         </div>
         <div id="andrew-popup" class="popup">
             <div class="popup-content">
-                <span class="popup-close" onclick="closePopup('andrew')">×</span>
+                <button class="popup-close" onclick="closePopup('andrew')">×</button>
                 <h4>Andrew Taylor</h4>
                 <p>Chef de Cuisine</p>
                 <p>
-                    Andrew Taylor is the Chef de Cuisine at Union Square Cafe. With a focus on local ingredients and culinary excellence, Andrew works closely with the team to create dishes that reflect the restaurant’s commitment to quality and innovation.
+                    Andrew Taylor is the Chef de Cuisine at Union Square Cafe. With a focus on local ingredients and culinary excellence, Andrew works closely with the team to create dishes that reflect the restaurant's commitment to quality and innovation.
                 </p>
             </div>
         </div>
@@ -1316,11 +1351,23 @@
         // Popup functionality for team members
         function openPopup(member) {
             document.getElementById(`${member}-popup`).style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
         }
 
         function closePopup(member) {
             document.getElementById(`${member}-popup`).style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
         }
+
+        // Close popup when clicking outside content
+        document.querySelectorAll('.popup').forEach(popup => {
+            popup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    const memberId = this.id.replace('-popup', '');
+                    closePopup(memberId);
+                }
+            });
+        });
     </script>
 </body>
 </html>
