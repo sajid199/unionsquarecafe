@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Union Square Cafe - Community</title>
+    <title>Union Square Cafe - Hours & Location</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Font Awesome for icons -->
@@ -387,183 +387,207 @@
         display: block; /* Ensure container is visible */
     }
 
-    .content-section {
+    /* Hours & Location Section */
+    .hours-location-section {
         text-align: center;
         margin-bottom: 80px;
-        display: block; /* Ensure section is visible */
+        display: block;
     }
 
-    .content-section p {
-        font-size: 1.1rem;
-        line-height: 1.8;
+    .hours-location-section h1 {
+        font-size: 2.5rem;
+        color: #c8102e;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+        font-weight: normal;
+    }
+
+    .location-info {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .location-info p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    .location-info a {
+        color: #c8102e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .location-info a:hover {
+        color: #8b1538;
+    }
+
+    .hours-section {
+        margin-bottom: 60px;
+    }
+
+    .hours-section h2 {
+        font-size: 1.5rem;
+        color: #c8102e;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    .hours-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
         max-width: 800px;
         margin: 0 auto;
-        color: #555;
     }
 
-    /* Community Section */
-    .community-section {
-        text-align: center;
-        margin-bottom: 80px;
-        display: block;
-    }
-
-    .community-section h3 {
-        font-size: 1.1rem;
-        color: #c8102e;
-        margin-bottom: 20px;
+    .hours-item {
         text-align: center;
     }
 
-    .event-details {
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 600px;
-        margin: 0 auto 40px;
+    .hours-item h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: normal;
     }
 
-    .event-details img {
-        display: block;
-        margin: 0 auto 20px;
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-    }
-
-    .event-details h4 {
-        font-size: 2rem;
-        color: #c8102e;
-        margin-bottom: 20px;
-    }
-
-    .event-details ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
+    .hours-item p {
         font-size: 1rem;
         color: #555;
+        margin-bottom: 5px;
     }
 
-    .event-details ul li {
+    .reservation-note {
+        font-style: italic;
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    /* Map Section */
+    .map-section {
+        margin: 60px 0;
+        text-align: center;
+    }
+
+    .map-placeholder {
+        width: 100%;
+        height: 400px;
+        background-color: #e8e8e8;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-image: 
+            linear-gradient(90deg, #ddd 1px, transparent 1px),
+            linear-gradient(180deg, #ddd 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    .map-marker {
+        width: 40px;
+        height: 40px;
+        background-color: #c8102e;
+        border-radius: 50% 50% 50% 0;
+        position: relative;
+        transform: rotate(-45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .map-marker::before {
+        content: '';
+        width: 16px;
+        height: 16px;
+        background-color: white;
+        border-radius: 50%;
+        transform: rotate(45deg);
+    }
+
+    .directions-btn {
+        background-color: #c8102e;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .directions-btn:hover {
+        background-color: #8b1538;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    .contact-section h2 {
+        font-size: 1.5rem;
+        color: #c8102e;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        font-weight: normal;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+        color: #555;
         margin-bottom: 10px;
     }
 
-    .event-details ul li strong {
-        color: #333;
+    .contact-section a {
+        color: #c8102e;
+        text-decoration: none;
+        transition: color 0.3s ease;
     }
 
-    .thank-you {
-        font-style: italic;
-        font-size: 1rem;
-        color: #777;
-        margin-top: 20px;
+    .contact-section a:hover {
+        color: #8b1538;
     }
 
-    /* Organizations Section */
-    .organizations-section {
+    /* Media Inquiries */
+    .media-section {
         text-align: center;
-        margin-bottom: 80px;
-        display: block;
+        margin: 60px 0;
     }
 
-    .organizations-grid {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-        max-width: 100%;
-        align-items: flex-start; /* Align all grid items to the top */
+    .media-section h2 {
+        font-size: 1.5rem;
+        color: #c8102e;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        font-weight: normal;
     }
 
-    .organization-item {
-        flex: 0 0 calc(33.333% - 40px);
-        max-width: calc(33.333% - 40px);
-        text-align: center; /* Center all content within the grid item */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Ensure content is centered horizontally */
-    }
-
-    .organization-item img {
-        width: 50%; /* Scales to 50% of the grid item width */
-        max-width: 150px; /* Prevents the image from becoming too large on wide screens */
-        height: auto; /* Maintains aspect ratio */
-        object-fit: contain;
-        margin-bottom: 15px;
-        display: block;
-    }
-
-    .organization-item h4 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        position: relative;
-    }
-
-    .organization-item h4 a {
-        color: #000; /* Black text by default */
-        text-decoration: none; /* Remove default underline */
-        transition: color 0.3s ease; /* Smooth color transition on hover */
-        position: relative; /* For the underline effect */
-        display: inline-block; /* Needed for the underline to work properly */
-    }
-
-    .organization-item h4 a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #c8102e; /* Red underline */
-        transition: width 0.3s ease-in-out; /* Smooth underline transition */
-        transform-origin: left;
-    }
-
-    .organization-item h4 a:hover::after {
-        width: 100%; /* Underline spans full width on hover */
-    }
-
-    .organization-item h4 a:hover {
-        color: #c8102e; /* Text turns red on hover */
-    }
-
-    .organization-item p {
+    .media-section p {
         font-size: 1rem;
         color: #555;
-        margin-bottom: 20px;
-        text-align: center;
+        margin-bottom: 10px;
     }
 
-    .organization-item a {
+    .media-section a {
         color: #c8102e;
-        text-decoration: underline;
-        font-size: 1rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
     }
 
-    /* Photos Section */
-    .photos-section {
-        text-align: center;
-        margin-bottom: 80px;
-        display: block;
-    }
-
-    .photos-grid {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .photo-item {
-        flex: 0 0 calc(25% - 20px);
-        max-width: calc(25% - 20px);
-    }
-
-    .photo-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 0; /* Removed rounded corners */
+    .media-section a:hover {
+        color: #8b1538;
     }
 
     /* Footer */
@@ -672,19 +696,48 @@
             margin-left: 20px;
         }
 
-        .organization-item {
-            flex: 0 0 100%;
-            max-width: 100%;
+        .hours-location-section h1 {
+            font-size: 2rem;
         }
 
-        .organization-item img {
-            width: 30%; /* Slightly smaller on mobile for better fit */
-            max-width: 120px;
+        .location-info p {
+            font-size: 1.1rem;
         }
 
-        .photo-item {
-            flex: 0 0 calc(50% - 20px);
-            max-width: calc(50% - 20px);
+        .hours-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .hours-section h2 {
+            font-size: 1.3rem;
+        }
+
+        .hours-item h3 {
+            font-size: 1.1rem;
+        }
+
+        .hours-item p {
+            font-size: 0.9rem;
+        }
+
+        .reservation-note {
+            font-size: 0.8rem;
+        }
+
+        .contact-section h2,
+        .media-section h2 {
+            font-size: 1.3rem;
+        }
+
+        .contact-section p,
+        .media-section p {
+            font-size: 0.9rem;
+        }
+
+        .directions-btn {
+            font-size: 0.8rem;
+            padding: 10px 25px;
         }
     }
 
@@ -693,22 +746,43 @@
             padding: 0 15px;
         }
 
-        .photo-item {
-            flex: 0 0 100%;
-            max-width: 100%;
+        .hours-location-section h1 {
+            font-size: 1.8rem;
         }
 
-        .photo-item img {
-            height: 150px;
+        .location-info p {
+            font-size: 1rem;
         }
 
-        .event-details img {
-            max-width: 300px;
+        .hours-section h2 {
+            font-size: 1.2rem;
         }
 
-        .organization-item img {
-            width: 40%; /* Adjust for very small screens */
-            max-width: 100px;
+        .hours-item h3 {
+            font-size: 1rem;
+        }
+
+        .hours-item p {
+            font-size: 0.8rem;
+        }
+
+        .reservation-note {
+            font-size: 0.7rem;
+        }
+
+        .contact-section h2,
+        .media-section h2 {
+            font-size: 1.2rem;
+        }
+
+        .contact-section p,
+        .media-section p {
+            font-size: 0.8rem;
+        }
+
+        .directions-btn {
+            font-size: 0.7rem;
+            padding: 8px 20px;
         }
     }
     </style>
@@ -729,11 +803,11 @@
         </div>
         <nav class="nav">
             <div class="nav-item">
-                <a href="#" class="active">Our Story</a>
+                <a href="#">Our Story</a>
                 <i class="fas fa-chevron-down arrow"></i>
                 <div class="dropdown-menu" id="dropdown-story">
                     <a href="about.html">About</a>
-                    <a href="#">Community</a>
+                    <a href="community.html">Community</a>
                 </div>
             </div>
             <div class="nav-item">
@@ -741,7 +815,6 @@
             </div>
             <div class="nav-item">
                  <a href="hours_location.html" class="active">Hours & Location</a>
-
 
             </div>
             <div class="nav-item">
@@ -782,19 +855,18 @@
     <div id="mobileNav" class="mobile-nav">
         <div class="mobile-nav-links">
             <div class="mobile-nav-item">
-                <a href="#" class="active">Our Story</a>
+                <a href="#">Our Story</a>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
             <div class="submenu" id="submenu-story">
                 <a href="about.html">About</a>
-                <a href="#" class="active">Community</a>
+                <a href="community.html">Community</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="menu.html">Menus</a>
             </div>
             <div class="mobile-nav-item">
                  <a href="hours_location.html" class="active">Hours & Location</a>
-
 
             </div>
             <div class="mobile-nav-item">
@@ -848,80 +920,68 @@
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Community Section -->
-        <section class="community-section">
-            <h3>Our Community</h3>
-            <p>
-                Chef Lena Ciardullo and the team at Union Square Cafe are proud to partner with organizations that support the next generation of hospitality workers in New York and beyond.
-            </p>
-            <div class="event-details">
-                <img src="./image/Gallary/community/all_in_one.avif" alt="All In Union Square Event">
-                <p class="thank-you">
-                    THANK YOU to all who joined us for our second annual ALL IN Fall Fest to benefit Drive Change, Emma’s Torch, and Food Education Fund.
-                </p>
-                <h4>All In Union Square</h4>
-                <ul>
-                    <li><strong>Fall Fest:</strong> Sunday, October 6th</li>
-                    <li><strong>Time:</strong> 9:15 AM - 3:00 PM</li>
-                    <li><strong>Activities:</strong> Union Square Greenmarket, Bites, Sips, Music, Chef Demos, DJ Huggy Bear</li>
-                </ul>
-                <p>
-                    Take a peek at the party on <a href="https://www.instagram.com" style="color: #c8102e; text-decoration: underline;">Instagram</a>.
-                </p>
+        <section class="hours-location-section">
+            <h1>Hours & Location</h1>
+            
+            <div class="location-info">
+                <p>101 E 19th Street,<br>New York, NY 10003</p>
+                <p><a href="tel:+12122434020">(212) 243-4020</a></p>
+                <p><a href="mailto:info@unionsquarecafe.com">info@unionsquarecafe.com</a></p>
             </div>
-        </section>
 
-        <!-- Organizations Section -->
-        <section class="organizations-section">
-            <div class="organizations-grid">
-                <div class="organization-item">
-                    <img src="./image/Gallary/community/torch-black.avif" alt="Emma's Torch Logo">
-                    <h4><a href="https://emmastorch.org/donate?utm_source=website&utm_medium=community">Donate to Emma’s Torch</a></h4>
-                    <p>
-                        Emma’s Torch is a social enterprise whose mission is to empower refugees, asylees, and survivors of human trafficking through culinary education. Since its inception, Emma’s Torch has helped 160 people with training and job placement in culinary-related positions in New York City. We first started working with the team at Emma’s Torch in 2019, and have since welcomed five graduates of the program into the USHG family.
-                    </p>
-                    <p>
-                        Learn more about the work that Emma’s Torch does by visiting <a href="https://emmastorch.org/">emmastorch.org</a>.
-                    </p>
-                </div>
-                <div class="organization-item">
-                    <img src="./image/Gallary/community/fef-black.avif" alt="Food Education Fund Logo">
-                    <h4><a href="https://foodeducationfund.org/donate/">Donate to Food Education Fund</a></h4>
-                    <p>
-                        Food and Finance High School is New York City’s only culinary-focused public high school. They prepare and empower students to continue their education and cultivate sustainable careers through experiential learning in culinary arts, hospitality, and entrepreneurship. The school is supported by the Food Education Fund, a 501(c)(3) nonprofit that prepares and empowers culinary-focused public high school students, alumni, the majority of whom are BIPOC talent who live below the poverty line.
-                    </p>
-                    <p>
-                        Learn more about Food and Finance High School by visiting <a href="https://www.foodfinancehs.org/">https://www.foodfinancehs.org/</a>.
-                    </p>
-                </div>
-                <div class="organization-item">
-                    <img src="./image/Gallary/community/drive_change_logo.avif" alt="Drive Change Logo">
-                    <h4><a href="https://secure.givelively.org/donate/drive-change-inc">Donate to Drive Change</a></h4>
-                    <p>
-                        Drive Change is a 4-month paid fellowship for formerly incarcerated youth that focuses on culinary training and professional development. Each week, fellows prepare and serve free and nutritious meals to local communities that are navigating food insecurity. Union Square Cafe is proud to be one of Drive Change’s Hospitality Partners, hosting the fellows in our restaurant.
-                    </p>
-                    <p>
-                        Learn more about Drive Change by visiting <a href=" https://www.drivechangenyc.org/"> https://www.drivechangenyc.org/</a>.
-                    </p>
+            <div class="hours-section">
+                <h2>Hours</h2>
+                <div class="hours-grid">
+                    <div class="hours-item">
+                        <h3>Lunch</h3>
+                        <p>Monday - Friday</p>
+                        <p>11:30am - 2:30pm</p>
+                        <p class="reservation-note">(last reservation at 2:30pm)</p>
+                    </div>
+                    
+                    <div class="hours-item">
+                        <h3>Brunch</h3>
+                        <p>Saturday - Sunday</p>
+                        <p>11:00am - 2:30pm</p>
+                        <p class="reservation-note">(last reservation at 2:30pm)</p>
+                    </div>
+                    
+                    <div class="hours-item">
+                        <h3>Midday</h3>
+                        <p>Daily</p>
+                        <p>2:30pm - 5:00pm</p>
+                    </div>
+                    
+                    <div class="hours-item">
+                        <h3>Dinner</h3>
+                        <p>Sunday - Wednesday</p>
+                        <p>5:00pm - 10:30pm</p>
+                        <p class="reservation-note">(last reservation at 9:30pm)</p>
+                        <br>
+                        <p>Thursday - Saturday</p>
+                        <p>5:00pm - 11:00pm</p>
+                        <p class="reservation-note">(last reservation at 10:00pm)</p>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Photos Section -->
-        <section class="photos-section">
-            <div class="photos-grid">
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_1.avif" alt="Community Event Photo 1">
+            <div class="map-section">
+                <div class="map-placeholder">
+                    <div class="map-marker"></div>
                 </div>
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_2.avif" alt="Community Event Photo 2">
-                </div>
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_3.avif" alt="Community Event Photo 3">
-                </div>
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_5.avif" alt="Community Event Photo 4">
-                </div>
+                <button class="directions-btn">Get Directions</button>
+            </div>
+
+            <div class="contact-section">
+                <h2>Contact Us</h2>
+                <p>Phone: <a href="tel:+12122434020">(212) 243-4020</a></p>
+                <p>Email: <a href="mailto:info@unionsquarecafe.com">info@unionsquarecafe.com</a></p>
+            </div>
+
+            <div class="media-section">
+                <h2>Media Inquiries</h2>
+                <p>Contact <a href="mailto:press@ushgnyc.com">press@ushgnyc.com</a></p>
+                <p>Press downloads are provided by request.</p>
             </div>
         </section>
     </main>
@@ -1072,6 +1132,11 @@
             } else {
                 accessibilityIcon.classList.remove('visible');
             }
+        });
+
+        // Add click handler for directions button
+        document.querySelector('.directions-btn').addEventListener('click', function() {
+            window.open('https://maps.google.com/?q=101+E+19th+Street,+New+York,+NY+10003', '_blank');
         });
     </script>
 </body>
