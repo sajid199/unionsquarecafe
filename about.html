@@ -417,7 +417,7 @@
     .team-grid {
         display: flex;
         justify-content: center;
-        gap: 20px; /* Reduced gap from 40px to 20px */
+        gap: 20px;
         flex-wrap: wrap;
         max-width: 100%;
     }
@@ -425,14 +425,14 @@
     .team-member {
         text-align: center;
         cursor: pointer;
-        flex: 0 0 calc(33.333% - 20px); /* Adjusted for reduced gap */
+        flex: 0 0 calc(33.333% - 20px);
         max-width: calc(33.333% - 20px);
         box-sizing: border-box;
     }
 
     .team-member img {
-        width: 200px; /* Increased from 150px */
-        height: 200px; /* Increased from 150px */
+        width: 200px;
+        height: 200px;
         border-radius: 0;
         object-fit: cover;
         margin-bottom: 20px;
@@ -510,10 +510,10 @@
     .carousel-item img {
         width: 100%;
         max-width: 800px;
-        height: 400px; /* Reduced height from auto to 400px */
+        height: 400px; /* Reduced height */
         margin: 0 auto;
         display: block;
-        object-fit: cover; /* Ensure image fits well */
+        object-fit: cover;
     }
 
     /* Custom styles for carousel buttons */
@@ -524,19 +524,19 @@
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-        background-image: none; /* Remove default Bootstrap icons */
-        font-size: 2rem; /* Size of the Font Awesome icons */
-        color: #c8102e; /* Match theme color */
+        background-image: none;
+        font-size: 2rem;
+        color: #c8102e;
     }
 
     .carousel-control-prev-icon::before {
-        content: '\f053'; /* Font Awesome left arrow */
+        content: '\f053';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
     }
 
     .carousel-control-next-icon::before {
-        content: '\f054'; /* Font Awesome right arrow */
+        content: '\f054';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
     }
@@ -564,38 +564,48 @@
     .award-item {
         position: relative;
         text-align: center;
-        flex: 0 0 calc(33.333% - 40px); /* 3 items per row on desktop */
-        max-width: calc(33.333% - 40px);
+        flex: 0 0 calc(50% - 40px); /* Two items per row on desktop */
+        max-width: calc(50% - 40px);
     }
 
     .award-item img {
         width: 100%;
-        height: 150px;
+        height: 200px; /* Increased height for better visibility */
         border-radius: 0;
         object-fit: cover;
         display: block;
     }
 
-    .award-item p {
+    .award-item .award-text {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-        font-size: 1rem;
-        font-weight: bold;
-        margin: 0;
-        opacity: 0; /* Hidden by default */
+        width: 100%;
+        opacity: 0;
         transition: opacity 0.3s ease;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Improve readability */
+        text-align: center;
     }
 
-    .award-item:hover p {
-        opacity: 1; /* Show text on hover */
+    .award-item .award-text h4 {
+        font-size: 1.5rem; /* Larger heading size */
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .award-item .award-text p {
+        font-size: 1.2rem; /* Larger paragraph size */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .award-item:hover .award-text {
+        opacity: 1;
     }
 
     .award-item:hover img {
-        filter: brightness(50%); /* Darken image on hover */
+        filter: brightness(50%);
         transition: filter 0.3s ease;
     }
 
@@ -764,18 +774,25 @@
         }
 
         .team-member img {
-            width: 150px; /* Adjusted for mobile */
+            width: 150px;
             height: 150px;
         }
 
         .award-item {
-            flex: 0 0 100%; /* 1 item per row on mobile */
+            flex: 0 0 100%; /* One item per row on mobile */
             max-width: 100%;
         }
 
         .award-item img {
-            width: 100%;
-            height: 120px;
+            height: 150px;
+        }
+
+        .award-item .award-text h4 {
+            font-size: 1.3rem; /* Slightly smaller heading on mobile */
+        }
+
+        .award-item .award-text p {
+            font-size: 1rem; /* Slightly smaller paragraph on mobile */
         }
 
         .recipe-image {
@@ -794,8 +811,15 @@
         }
 
         .award-item img {
-            width: 100%;
-            height: 100px;
+            height: 120px;
+        }
+
+        .award-item .award-text h4 {
+            font-size: 1.1rem;
+        }
+
+        .award-item .award-text p {
+            font-size: 0.9rem;
         }
 
         .recipe-image {
@@ -807,7 +831,7 @@
         }
 
         .carousel-item img {
-            height: 300px; /* Further reduced for smaller screens */
+            height: 300px;
         }
     }
     </style>
@@ -883,7 +907,7 @@
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
             <div class="submenu" id="submenu-story">
-                <a href="about.html">About</a>
+                <a href="about.html" class="active">About</a>
                 <a href="#">Community</a>
             </div>
             <div class="mobile-nav-item">
@@ -1074,15 +1098,24 @@
             <div class="awards-grid">
                 <div class="award-item">
                     <img src="./image/Gallary/about/Award Image_1.avif" alt="James Beard Foundation">
-                    <p>Outstanding Service 1992</p>
+                    <div class="award-text">
+                        <h4>Outstanding Service</h4>
+                        <p>1992</p>
+                    </div>
                 </div>
                 <div class="award-item">
                     <img src="./image/Gallary/about/award_4.avif" alt="James Beard Foundation">
-                    <p>Outstanding Restaurant 1997</p>
+                    <div class="award-text">
+                        <h4>Outstanding Restaurant</h4>
+                        <p>1997</p>
+                    </div>
                 </div>
                 <div class="award-item">
                     <img src="./image/Gallary/about/awar Image_3.avif" alt="James Beard Foundation">
-                    <p>Outstanding Wine Service 1999</p>
+                    <div class="award-text">
+                        <h4>Outstanding Wine Service</h4>
+                        <p>1999</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1113,8 +1146,9 @@
                 <li>Thoroughly toss the warm toasted nuts with the spiced butter and serve warm.</li>
             </ul>
             <p class="winner-note">
-                Winner of the Union Square Cafe Cookbook, From the New York Press award for "Best Bar Nuts in New York"
+                Winner of the Union Square Cafe Cookbook, "
             </p>
+            From <a style="color: #000; text-decoration: underline; " href="https://www.amazon.com/Union-Square-Cafe-Cookbook-Restaurant/dp/0062232398" target="_blank">The New York Press award for "Best Bar Nuts in New York</a>
         </section>
     </main>
 
@@ -1149,7 +1183,7 @@
             const carousel = document.querySelector('#historyCarousel');
             if (carousel) {
                 new bootstrap.Carousel(carousel, {
-                    interval: 5000, // Slide every 5 seconds
+                    interval: 5000,
                     ride: 'carousel'
                 });
             }
