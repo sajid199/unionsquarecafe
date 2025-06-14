@@ -11,8 +11,8 @@
     <!-- Google Font: Playfair Display -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
     * {
         margin: 0;
@@ -20,15 +20,15 @@
         box-sizing: border-box;
     }
 
-   body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Playfair Display', serif;
-    background-color: #FFF6ED;
-    color: #333;
-    line-height: 1.6;
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
-}
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Playfair Display', serif;
+        background-color: #FFF6ED;
+        color: #333;
+        line-height: 1.6;
+        min-height: 100vh;
+    }
 
     /* Header */
     .header {
@@ -274,14 +274,16 @@
         height: 100vh;
         background-color: #FFF6ED;
         z-index: 1001;
-        padding: 80px 40px 40px;
+        padding: 80px 40px 120px;
         overflow-y: auto;
         transition: top 0.5s ease-in-out;
+        min-height: 100vh;
     }
 
     .mobile-nav.active {
-        display: inline-block;
-        top: 83px; /* Adjusted for fixed navbar */
+        display: flex;
+        flex-direction: column;
+        top: 83px;
     }
 
     .mobile-nav-links {
@@ -289,6 +291,7 @@
         flex-direction: column;
         gap: 15px;
         text-align: center;
+        flex-grow: 1;
     }
 
     .mobile-nav-item {
@@ -344,6 +347,37 @@
         text-decoration: none;
     }
 
+    /* Mobile Footer */
+    .mobile-nav-footer {
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .mobile-social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .mobile-social-icon {
+        color: #333;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .mobile-powered-by {
+        font-size: 0.8rem;
+        color: #fff;
+        margin-top: 10px;
+        background-color: #c8102e;
+;
+        padding: 10px;
+    }
+
     /* Hero Section */
     .hero {
         height: 70vh;
@@ -351,7 +385,7 @@
         margin-bottom: 60px;
         margin-left: 5%;
         margin-right: 5%;
-        margin-top: 120px; /* Adjusted for fixed navbar */
+        margin-top: 120px;
     }
 
     .carousel-item img {
@@ -492,32 +526,21 @@
     }
 
     /* Footer */
-   .footer {
-    background-color: rgb(179,8,56);
-    color: white;
-    padding: 40px 20px 20px;
-    text-align: center;
-    flex-shrink: 0; /* Prevent footer from shrinking */
-}
+    .footer {
+        background-color: rgb(179,8,56);
+        color: white;
+        padding: 40px 20px 20px;
+        text-align: center;
+        flex-shrink: 0;
+        width: 100vw;
+        max-width: none;
+    }
 
     .footer-social {
         display: flex;
         justify-content: center;
         gap: 20px;
         margin-bottom: 30px;
-    }
-
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: rgb(179,8,56);
-        font-size: 20px;
     }
 
     .footer-links {
@@ -541,7 +564,23 @@
 
     .footer-powered {
         font-size: 0.8rem;
-        opacity: 0.8;
+        color: #666;
+        background-color: #e6dcd3;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgb(179,8,56);
+        font-size: 20px;
     }
 
     /* Popup Modal */
@@ -717,7 +756,7 @@
 
         .hero {
             height: 50vh;
-            margin-top: 100px; /* Adjusted for fixed navbar */
+            margin-top: 100px;
         }
 
         .carousel-item img {
@@ -937,9 +976,21 @@
             <div class="mobile-nav-item">
                 <a href="#">Terms and Conditions</a>
             </div>
-            <div style="margin-top: 40px; color: #666;">
-                <p>101 E 19th St, New York, NY 10003</p>
-                <p>(212) 243-4020</p>
+            <div class="mobile-nav-item">
+                <a href="#">101 E 19th St, New York, NY 10003 <br>
+                (212) 243-4020</a>
+            </div>
+        </div>
+        
+        <!-- Mobile Footer -->
+        <div class="mobile-nav-footer">
+            <div class="mobile-social-icons">
+                <a href="#" class="mobile-social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="mobile-social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="mobile-social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="mobile-powered-by">
+                powered by BentoBox
             </div>
         </div>
     </div>
