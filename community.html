@@ -472,12 +472,16 @@
         gap: 40px;
         flex-wrap: wrap;
         max-width: 100%;
+        align-items: flex-start; /* Align all grid items to the top */
     }
 
     .organization-item {
         flex: 0 0 calc(33.333% - 40px);
         max-width: calc(33.333% - 40px);
-        text-align: left;
+        text-align: center; /* Center all content within the grid item */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Ensure content is centered horizontally */
     }
 
     .organization-item img {
@@ -487,26 +491,40 @@
         object-fit: contain;
         margin-bottom: 15px;
         display: block;
-        margin-left: auto;
-        margin-right: auto; /* Centers the image */
     }
 
     .organization-item h4 {
         font-size: 1.1rem;
-        color: #c8102e;
         margin-bottom: 15px;
         position: relative;
-        text-align: center;
     }
 
-    .organization-item h4::after {
+    .organization-item h4 a {
+        color: #000; /* Black text by default */
+        text-decoration: none; /* Remove default underline */
+        transition: color 0.3s ease; /* Smooth color transition on hover */
+        position: relative; /* For the underline effect */
+        display: inline-block; /* Needed for the underline to work properly */
+    }
+
+    .organization-item h4 a::after {
         content: '';
         position: absolute;
         bottom: -5px;
         left: 0;
-        width: 50px;
+        width: 0;
         height: 2px;
-        background-color: #c8102e;
+        background-color: #c8102e; /* Red underline */
+        transition: width 0.3s ease-in-out; /* Smooth underline transition */
+        transform-origin: left;
+    }
+
+    .organization-item h4 a:hover::after {
+        width: 100%; /* Underline spans full width on hover */
+    }
+
+    .organization-item h4 a:hover {
+        color: #c8102e; /* Text turns red on hover */
     }
 
     .organization-item p {
@@ -854,7 +872,7 @@
             <div class="organizations-grid">
                 <div class="organization-item">
                     <img src="./image/Gallary/community/torch-black.avif" alt="Emma's Torch Logo">
-                    <h4>Donate to Emma’s Torch</h4>
+                    <h4><a href="https://emmastorch.org/donate?utm_source=website&utm_medium=community">Donate to Emma’s Torch</a></h4>
                     <p>
                         Emma’s Torch is a social enterprise whose mission is to empower refugees, asylees, and survivors of human trafficking through culinary education. Since its inception, Emma’s Torch has helped 160 people with training and job placement in culinary-related positions in New York City. We first started working with the team at Emma’s Torch in 2019, and have since welcomed five graduates of the program into the USHG family.
                     </p>
@@ -864,22 +882,22 @@
                 </div>
                 <div class="organization-item">
                     <img src="./image/Gallary/community/fef-black.avif" alt="Food Education Fund Logo">
-                    <h4>Donate to Food Education Fund</h4>
+                    <h4><a href="https://foodeducationfund.org/donate/">Donate to Food Education Fund</a></h4>
                     <p>
                         Food and Finance High School is New York City’s only culinary-focused public high school. They prepare and empower students to continue their education and cultivate sustainable careers through experiential learning in culinary arts, hospitality, and entrepreneurship. The school is supported by the Food Education Fund, a 501(c)(3) nonprofit that prepares and empowers culinary-focused public high school students, alumni, the majority of whom are BIPOC talent who live below the poverty line.
                     </p>
                     <p>
-                        Learn more about Food and Finance High School by visiting <a href="https://www.foodeducationfund.org/">foodeducationfund.org</a>.
+                        Learn more about Food and Finance High School by visiting <a href="https://www.foodfinancehs.org/">https://www.foodfinancehs.org/</a>.
                     </p>
                 </div>
                 <div class="organization-item">
                     <img src="./image/Gallary/community/drive_change_logo.avif" alt="Drive Change Logo">
-                    <h4>Donate to Drive Change</h4>
+                    <h4><a href="https://secure.givelively.org/donate/drive-change-inc">Donate to Drive Change</a></h4>
                     <p>
                         Drive Change is a 4-month paid fellowship for formerly incarcerated youth that focuses on culinary training and professional development. Each week, fellows prepare and serve free and nutritious meals to local communities that are navigating food insecurity. Union Square Cafe is proud to be one of Drive Change’s Hospitality Partners, hosting the fellows in our restaurant.
                     </p>
                     <p>
-                        Learn more about Drive Change by visiting <a href="https://www.drivechangenyc.org/">drivechangenyc.org</a>.
+                        Learn more about Drive Change by visiting <a href=" https://www.drivechangenyc.org/"> https://www.drivechangenyc.org/</a>.
                     </p>
                 </div>
             </div>
