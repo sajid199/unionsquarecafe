@@ -831,6 +831,63 @@
             height: 100%;
             object-fit: cover;
         }
+  @media (max-width: 768px) {
+    .popup-overlay {
+        align-items: flex-end; /* Align popup to the bottom */
+        justify-content: center; /* Center horizontally */
+    }
+
+    .popup-content {
+        width: 100%; /* Full screen width */
+        max-width: 100vw; /* Span entire viewport width */
+        border-radius: 12px 12px 0 0; /* Rounded corners only at the top */
+        margin: 0; /* Remove margins */
+        position: relative; /* Positioning context for close button */
+        background-color: white; /* White background for popup content */
+        max-height: 90vh; /* Increased height to 90% of viewport */
+        overflow-y: auto; /* Allow scrolling if content overflows */
+    }
+
+    .popup-close {
+        top: 10px; /* Position inside popup, near the top */
+        right: 10px; /* Align to the right edge */
+        font-size: 24px; /* Suitable size for mobile */
+        color: rgb(179, 8, 56); /* Match existing color */
+        background: white; /* White background for visibility */
+        border: none; /* No border */
+        width: 30px; /* Fixed click area */
+        height: 30px; /* Fixed click area */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2002; /* Above other elements */
+        border-radius: 50%; /* Circular shape */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    }
+
+    .popup-container {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .popup-image {
+        min-height: 200px; /* Increased height for image to balance taller popup */
+        min-width: 100%; /* Full width */
+        border-radius: 12px 12px 0 0; /* Rounded top corners */
+    }
+
+    .popup-text {
+        padding: 20px; /* Slightly increased padding for better spacing */
+    }
+
+    .popup-text h2 {
+        font-size: 1.4rem; /* Slightly larger heading for better readability */
+    }
+
+    .popup-text p {
+        font-size: 1rem; /* Slightly larger paragraph text */
+    }
+}
     }
     </style>
 </head>
