@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Union Square Cafe - Community</title>
+    <title>Cafe Peter - Values</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Font Awesome for icons -->
@@ -409,161 +409,30 @@
     }
 
     .community-section h3 {
-        font-size: 1.1rem;
+        font-size: 2rem; /* Increased font size for Our Core Values */
         color: #c8102e;
         margin-bottom: 20px;
         text-align: center;
     }
 
-    .event-details {
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 600px;
-        margin: 0 auto 40px;
-    }
-
-    .event-details img {
-        display: block;
-        margin: 0 auto 20px;
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-    }
-
-    .event-details h4 {
-        font-size: 2rem;
-        color: #c8102e;
+    .value-item {
+        text-align: center; /* Center all value items */
         margin-bottom: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .event-details ul {
-        list-style: none;
-        padding: 0;
-        text-align: left;
-        font-size: 1rem;
-        color: #555;
-    }
-
-    .event-details ul li {
+    .value-item h4 {
+        font-size: 1.5rem;
+        color: #c8102e;
         margin-bottom: 10px;
     }
 
-    .event-details ul li strong {
-        color: #333;
-    }
-
-    .thank-you {
-        font-style: italic;
-        font-size: 1rem;
-        color: #777;
-        margin-top: 20px;
-    }
-
-    /* Organizations Section */
-    .organizations-section {
-        text-align: center;
-        margin-bottom: 80px;
-        display: block;
-    }
-
-    .organizations-grid {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-        max-width: 100%;
-        align-items: flex-start; /* Align all grid items to the top */
-    }
-
-    .organization-item {
-        flex: 0 0 calc(33.333% - 40px);
-        max-width: calc(33.333% - 40px);
-        text-align: center; /* Center all content within the grid item */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Ensure content is centered horizontally */
-    }
-
-    .organization-item img {
-        width: 50%; /* Scales to 50% of the grid item width */
-        max-width: 150px; /* Prevents the image from becoming too large on wide screens */
-        height: auto; /* Maintains aspect ratio */
-        object-fit: contain;
-        margin-bottom: 15px;
-        display: block;
-    }
-
-    .organization-item h4 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        position: relative;
-    }
-
-    .organization-item h4 a {
-        color: #000; /* Black text by default */
-        text-decoration: none; /* Remove default underline */
-        transition: color 0.3s ease; /* Smooth color transition on hover */
-        position: relative; /* For the underline effect */
-        display: inline-block; /* Needed for the underline to work properly */
-    }
-
-    .organization-item h4 a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #c8102e; /* Red underline */
-        transition: width 0.3s ease-in-out; /* Smooth underline transition */
-        transform-origin: left;
-    }
-
-    .organization-item h4 a:hover::after {
-        width: 100%; /* Underline spans full width on hover */
-    }
-
-    .organization-item h4 a:hover {
-        color: #c8102e; /* Text turns red on hover */
-    }
-
-    .organization-item p {
+    .value-item p {
         font-size: 1rem;
         color: #555;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .organization-item a {
-        color: #c8102e;
-        text-decoration: underline;
-        font-size: 1rem;
-    }
-
-    /* Photos Section */
-    .photos-section {
-        text-align: center;
-        margin-bottom: 80px;
-        display: block;
-    }
-
-    .photos-grid {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .photo-item {
-        flex: 0 0 calc(25% - 20px);
-        max-width: calc(25% - 20px);
-    }
-
-    .photo-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 0; /* Removed rounded corners */
+        margin: 0 auto;
     }
 
     /* Footer */
@@ -671,21 +540,6 @@
             display: block;
             margin-left: 20px;
         }
-
-        .organization-item {
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-
-        .organization-item img {
-            width: 30%; /* Slightly smaller on mobile for better fit */
-            max-width: 120px;
-        }
-
-        .photo-item {
-            flex: 0 0 calc(50% - 20px);
-            max-width: calc(50% - 20px);
-        }
     }
 
     @media (max-width: 480px) {
@@ -693,22 +547,8 @@
             padding: 0 15px;
         }
 
-        .photo-item {
-            flex: 0 0 100%;
-            max-width: 100%;
-        }
-
-        .photo-item img {
-            height: 150px;
-        }
-
-        .event-details img {
-            max-width: 300px;
-        }
-
-        .organization-item img {
-            width: 40%; /* Adjust for very small screens */
-            max-width: 100px;
+        .community-section h3 {
+            font-size: 1.5rem; /* Adjust font size for smaller screens */
         }
     }
     </style>
@@ -723,8 +563,8 @@
     <header class="header">
         <div class="logo">
             <a href="index.html">
-                <img src="./image/logo.png" alt="Union Square Cafe" class="logo-img desktop-logo">
-                <img src="./image/mobile_logo.png" alt="Union Square Cafe" class="logo-img mobile-logo">
+                <img src="./image/logo.png" alt="Cafe Peter" class="logo-img desktop-logo">
+                <img src="./image/mobile_logo.png" alt="Cafe Peter" class="logo-img mobile-logo">
             </a>
         </div>
         <nav class="nav">
@@ -733,40 +573,35 @@
                 <i class="fas fa-chevron-down arrow"></i>
                 <div class="dropdown-menu" id="dropdown-story">
                     <a href="about.html">About</a>
-                    <a href="#">Community</a>
+                    <a href="community.html">Values</a>
                 </div>
             </div>
             <div class="nav-item">
                 <a href="menu.html">Menus</a>
             </div>
             <div class="nav-item">
-                 <a href="hours_location.html">Hours & Location</a>
-
-
+                <a href="hours_location.html">Hours & Location</a>
             </div>
             <div class="nav-item">
-                   <a href="gallary.html">Gallery</a>
-
+                <a href="gallary.html">Gallery</a>
             </div>
             <div class="nav-item">
-                               <a href="private_dining.html">Private Dining</a>
-
+                <a href="private_dining.html">Private Dining</a>
             </div>
             <div class="nav-item">
                 <a href="#">Shop</a>
                 <i class="fas fa-chevron-down arrow"></i>
                 <div class="dropdown-menu" id="dropdown-shop">
-                    <a href="https://www.goldbelly.com/restaurants/union-square-cafe" target="_blank">Nationwide Shipping</a>
-                    <a href="https://www.unionsquarecafe.com/catering-store-v2/union-square-cafe/menu/order-settings">Pre-Order & Pick Up</a>
-                    <a href="https://www.ushg.com/shop" target="_blank" >Gift Cards</a>
+                    <a href="#">Nationwide Shipping</a>
+                    <a href="#">Pre-Order & Pick Up</a>
+                    <a href="#">Gift Cards</a>
                 </div>
             </div>
             <div class="nav-item">
-                                    <a href="anniversary.html">40th Anniversary</a>
-
+                <a href="anniversary.html">Anniversary</a>
             </div>
             <div class="nav-item">
-                    <a href="reserved.html" class="active" target="_blank">Reserve</a>
+                <a href="reserved.html" class="active" target="_blank">Reserve</a>
             </div>
         </nav>
 
@@ -790,36 +625,31 @@
             </div>
             <div class="submenu" id="submenu-story">
                 <a href="about.html">About</a>
-                <a href="#" class="active">Community</a>
+                <a href="#" class="active">Values</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="menu.html">Menus</a>
             </div>
             <div class="mobile-nav-item">
-                 <a href="hours_location.html">Hours & Location</a>
-
-
+                <a href="hours_location.html">Hours & Location</a>
             </div>
             <div class="mobile-nav-item">
-                   <a href="gallary.html">Gallery</a>
-
+                <a href="gallary.html">Gallery</a>
             </div>
             <div class="mobile-nav-item">
-                               <a href="private_dining.html">Private Dining</a>
-
+                <a href="private_dining.html">Private Dining</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="#">Shop</a>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
-             <div class="submenu" id="submenu-shop">
-            <a href="https://www.goldbelly.com/restaurants/union-square-cafe" target="_blank">Nationwide Shipping</a>
-            <a href="https://www.unionsquarecafe.com/catering-store-v2/union-square-cafe/menu/order-settings">Pre-Order & Pick Up</a>
-            <a href="https://www.ushg.com/shop" target="_blank">Gift Cards</a>
-        </div>
+            <div class="submenu" id="submenu-shop">
+                <a href="#">Nationwide Shipping</a>
+                <a href="#">Pre-Order & Pick Up</a>
+                <a href="#">Gift Cards</a>
+            </div>
             <div class="mobile-nav-item">
-                                    <a href="anniversary.html">40th Anniversary</a>
-
+                <a href="anniversary.html">Anniversary</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="#">Press</a>
@@ -834,8 +664,7 @@
                 <a href="#">Terms and Conditions</a>
             </div>
             <div class="mobile-nav-item">
-                <a href="#">101 E 19th St, New York, NY 10003 <br>
-                (212) 243-4020</a>
+                <a href="#">Contact Us</a>
             </div>
         </div>
         
@@ -854,80 +683,51 @@
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Community Section -->
+        <!-- Values Section -->
         <section class="community-section">
-            <h3>Our Community</h3>
+            <h3>Our Core Values</h3>
             <p>
-                Chef Lena Ciardullo and the team at Union Square Cafe are proud to partner with organizations that support the next generation of hospitality workers in New York and beyond.
+                At Cafe Peter, our values are the heart of our culture. We aim to provide excellent service and work with integrity, passion, and teamwork.
             </p>
-            <div class="event-details">
-                <img src="./image/Gallary/community/all_in_one.avif" alt="All In Union Square Event">
-                <p class="thank-you">
-                    THANK YOU to all who joined us for our second annual ALL IN Fall Fest to benefit Drive Change, Emma’s Torch, and Food Education Fund.
-                </p>
-                <h4>All In Union Square</h4>
-                <ul>
-                    <li><strong>Fall Fest:</strong> Sunday, October 6th</li>
-                    <li><strong>Time:</strong> 9:15 AM - 3:00 PM</li>
-                    <li><strong>Activities:</strong> Union Square Greenmarket, Bites, Sips, Music, Chef Demos, DJ Huggy Bear</li>
-                </ul>
-                <p>
-                    Take a peek at the party on <a href="https://www.instagram.com" style="color: #c8102e; text-decoration: underline;">Instagram</a>.
-                </p>
+            <div class="value-item">
+                <h4>Integrity First</h4>
+                <p>We lead with honesty and transparency in everything we do.</p>
             </div>
-        </section>
-
-        <!-- Organizations Section -->
-        <section class="organizations-section">
-            <div class="organizations-grid">
-                <div class="organization-item">
-                    <img src="./image/Gallary/community/torch-black.avif" alt="Emma's Torch Logo">
-                    <h4><a href="https://emmastorch.org/donate?utm_source=website&utm_medium=community">Donate to Emma’s Torch</a></h4>
-                    <p>
-                        Emma’s Torch is a social enterprise whose mission is to empower refugees, asylees, and survivors of human trafficking through culinary education. Since its inception, Emma’s Torch has helped 160 people with training and job placement in culinary-related positions in New York City. We first started working with the team at Emma’s Torch in 2019, and have since welcomed five graduates of the program into the USHG family.
-                    </p>
-                    <p>
-                        Learn more about the work that Emma’s Torch does by visiting <a href="https://emmastorch.org/">emmastorch.org</a>.
-                    </p>
-                </div>
-                <div class="organization-item">
-                    <img src="./image/Gallary/community/fef-black.avif" alt="Food Education Fund Logo">
-                    <h4><a href="https://foodeducationfund.org/donate/">Donate to Food Education Fund</a></h4>
-                    <p>
-                        Food and Finance High School is New York City’s only culinary-focused public high school. They prepare and empower students to continue their education and cultivate sustainable careers through experiential learning in culinary arts, hospitality, and entrepreneurship. The school is supported by the Food Education Fund, a 501(c)(3) nonprofit that prepares and empowers culinary-focused public high school students, alumni, the majority of whom are BIPOC talent who live below the poverty line.
-                    </p>
-                    <p>
-                        Learn more about Food and Finance High School by visiting <a href="https://www.foodfinancehs.org/">https://www.foodfinancehs.org/</a>.
-                    </p>
-                </div>
-                <div class="organization-item">
-                    <img src="./image/Gallary/community/drive_change_logo.avif" alt="Drive Change Logo">
-                    <h4><a href="https://secure.givelively.org/donate/drive-change-inc">Donate to Drive Change</a></h4>
-                    <p>
-                        Drive Change is a 4-month paid fellowship for formerly incarcerated youth that focuses on culinary training and professional development. Each week, fellows prepare and serve free and nutritious meals to local communities that are navigating food insecurity. Union Square Cafe is proud to be one of Drive Change’s Hospitality Partners, hosting the fellows in our restaurant.
-                    </p>
-                    <p>
-                        Learn more about Drive Change by visiting <a href=" https://www.drivechangenyc.org/"> https://www.drivechangenyc.org/</a>.
-                    </p>
-                </div>
+            <div class="value-item">
+                <h4>Customer Love</h4>
+                <p>Your needs are our priority, and we aim to exceed expectations.</p>
             </div>
-        </section>
-
-        <!-- Photos Section -->
-        <section class="photos-section">
-            <div class="photos-grid">
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_1.avif" alt="Community Event Photo 1">
-                </div>
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_2.avif" alt="Community Event Photo 2">
-                </div>
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_3.avif" alt="Community Event Photo 3">
-                </div>
-                <div class="photo-item">
-                    <img src="./image/Gallary/community/pic_5.avif" alt="Community Event Photo 4">
-                </div>
+            <div class="value-item">
+                <h4>Innovate & Evolve</h4>
+                <p>We embrace creativity and change.</p>
+            </div>
+            <div class="value-item">
+                <h4>Excellence Always</h4>
+                <p>We maintain the highest quality standards.</p>
+            </div>
+            <div class="value-item">
+                <h4>Teamwork Wins</h4>
+                <p>Collaboration is key to our success.</p>
+            </div>
+            <div class="value-item">
+                <h4>Own It</h4>
+                <p>We take responsibility for our actions and results.</p>
+            </div>
+            <div class="value-item">
+                <h4>Respect & Inclusivity</h4>
+                <p>Every voice matters, and we celebrate diversity.</p>
+            </div>
+            <div class="value-item">
+                <h4>Sustainable Future</h4>
+                <p>We commit to environmentally friendly practices.</p>
+            </div>
+            <div class="value-item">
+                <h4>Passion & Drive</h4>
+                <p>Our enthusiasm fuels our work and inspires others.</p>
+            </div>
+            <div class="value-item">
+                <h4>Adapt & Thrive</h4>
+                <p>We are agile and ready to face challenges.</p>
             </div>
         </section>
     </main>
@@ -944,8 +744,7 @@
             <a href="#">Press</a>
             <a href="#">Careers</a>
             <a href="#">Terms and Conditions</a>
-            <a href="#">101 E 19th St, New York, NY 10003</a>
-            <a href="#">(212) 243-4020</a>
+            <a href="#">Contact Us</a>
             <a href="#">Email Signup</a>
         </div>
     </footer>
