@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Union Square Cafe</title>
+    <title>Café Peter</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Font Awesome for icons -->
@@ -248,7 +248,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 30px;
+        width: 30 Activating accessibility icon visibility near page bottom */
         height: 30px;
         background: none;
         border: none;
@@ -375,7 +375,6 @@
         color: #fff;
         margin-top: 10px;
         background-color: #c8102e;
-;
         padding: 10px;
     }
 
@@ -584,151 +583,6 @@
         font-size: 20px;
     }
 
-    /* Popup Modal */
-    .popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2000;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.5s ease;
-    }
-
-    .popup-overlay.active {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .popup-content {
-        background-color: white;
-        max-width: 800px;
-        width: 90%;
-        max-height: 90%;
-        border-radius: 12px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        transform: translateY(100%);
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .popup-overlay.active .popup-content {
-        transform: translateY(0);
-    }
-
-    .popup-close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: none;
-        border: none;
-        font-size: 30px;
-        color: rgb(179,8,56);
-        cursor: pointer;
-        z-index: 2001;
-    }
-
-    .popup-container {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-    }
-
-    .popup-image {
-        flex: 1;
-        min-width: 300px;
-        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                    url('./image/pop image.avif');
-        background-size: cover;
-        background-position: center;
-        cursor: pointer;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .popup-image.clicked {
-        transform: translateY(-20px);
-    }
-
-    .popup-text {
-        flex: 1;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        font-family: 'Playfair Display', serif;
-    }
-
-    .popup-text h2 {
-        color: rgb(179,8,56);
-        font-size: 1rem;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-    }
-
-    .popup-text p {
-        font-size: 1.1rem;
-        margin-bottom: 30px;
-        color: #555;
-    }
-
-    .popup-button {
-        background-color: transparent;
-        border: 2px solid rgb(179,8,56);
-        color: rgb(179,8,56);
-        padding: 15px 40px;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-        font-family: 'Playfair Display', serif;
-    }
-
-    .popup-button:hover {
-        background-color: rgb(179,8,56);
-        color: white;
-    }
-
-    /* Responsive Design for Popup */
-    @media (max-width: 768px) {
-        .popup-overlay {
-            align-items: flex-end;
-        }
-
-        .popup-container {
-            flex-direction: column;
-        }
-
-        .popup-image {
-            min-height: 200px;
-            min-width: auto;
-        }
-
-        .popup-text {
-            padding: 20px;
-        }
-
-        .popup-text h2 {
-            font-size: 1.5rem;
-        }
-
-        .popup-text p {
-            font-size: 1rem;
-        }
-
-        .popup-content {
-            width: 100%;
-            border-radius: 2px 2px 2px 2px;
-        }
-    }
-
     .reserve-btn {
         position: fixed;
         bottom: 0;
@@ -797,15 +651,6 @@
             height: 50vh;
         }
 
-        .popup-content {
-            width: 95%;
-            margin: 20px;
-        }
-
-        .popup-text {
-            padding: 30px 20px;
-        }
-
         .gallery {
             grid-template-columns: 1fr;
         }
@@ -831,63 +676,6 @@
             height: 100%;
             object-fit: cover;
         }
-  @media (max-width: 768px) {
-    .popup-overlay {
-        align-items: flex-end; /* Align popup to the bottom */
-        justify-content: center; /* Center horizontally */
-    }
-
-    .popup-content {
-        width: 100%; /* Full screen width */
-        max-width: 100vw; /* Span entire viewport width */
-        border-radius: 12px 12px 0 0; /* Rounded corners only at the top */
-        margin: 0; /* Remove margins */
-        position: relative; /* Positioning context for close button */
-        background-color: white; /* White background for popup content */
-        max-height: 90vh; /* Increased height to 90% of viewport */
-        overflow-y: auto; /* Allow scrolling if content overflows */
-    }
-
-    .popup-close {
-        top: 10px; /* Position inside popup, near the top */
-        right: 10px; /* Align to the right edge */
-        font-size: 24px; /* Suitable size for mobile */
-        color: rgb(179, 8, 56); /* Match existing color */
-        background: white; /* White background for visibility */
-        border: none; /* No border */
-        width: 30px; /* Fixed click area */
-        height: 30px; /* Fixed click area */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 2002; /* Above other elements */
-        border-radius: 50%; /* Circular shape */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    }
-
-    .popup-container {
-        flex-direction: column; /* Stack image and text vertically */
-    }
-
-    .popup-image {
-        min-height: 200px; /* Increased height for image to balance taller popup */
-        min-width: 100%; /* Full width */
-        border-radius: 12px 12px 0 0; /* Rounded top corners */
-    }
-
-    .popup-text {
-        padding: 20px; /* Slightly increased padding for better spacing */
-    }
-
-    .popup-text h2 {
-        font-size: 1.4rem; /* Slightly larger heading for better readability */
-    }
-
-    .popup-text p {
-        font-size: 1rem; /* Slightly larger paragraph text */
-    }
-}
     }
     </style>
 </head>
@@ -897,27 +685,12 @@
         <i class="fas fa-universal-access"></i>
     </div>
 
-    <!-- Popup Modal -->
-    <div id="popup" class="popup-overlay">
-        <div class="popup-content">
-            <button class="popup-close" onclick="closePopup()">×</button>
-            <div class="popup-container">
-                <div class="popup-image" onclick="handleImageClick()"></div>
-                <div class="popup-text">
-                    <h3>CHEERS TO 40 YEARS!</h3>
-                    <p>Join us in celebrating four incredible decades.</p>
-                    <button class="popup-button" onclick="closePopup()">Party With Us</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <div class="logo">
             <a href="index.html">
-                <img src="./image/logo.png" alt="Union Square Cafe" class="logo-img desktop-logo">
-                <img src="./image/mobile_logo.png" alt="Union Square Cafe" class="logo-img mobile-logo">
+                <img src="./image/logo.png" alt="Café Peter" class="logo-img desktop-logo">
+                <img src="./image/mobile_logo.png" alt="Café Peter" class="logo-img mobile-logo">
             </a>
         </div>
         <nav class="nav">
@@ -933,12 +706,10 @@
                 <a href="menu.html">Menus</a>
             </div>
             <div class="nav-item">
-                 <a href="hours_location.html">Hours & Location</a>
-
-
+                <a href="hours_location.html">Hours & Location</a>
             </div>
             <div class="nav-item">
-                <a href="gallary.html">Gallery</a>
+                <a href="gallery.html">Gallery</a>
             </div>
             <div class="nav-item">
                 <a href="private_dining.html">Private Dining</a>
@@ -947,16 +718,16 @@
                 <a href="#">Shop</a>
                 <i class="fas fa-chevron-down arrow"></i>
                 <div class="dropdown-menu" id="dropdown-shop">
-                    <a href="https://www.goldbelly.com/restaurants/union-square-cafe" target="_blank">Nationwide Shipping</a>
-                    <a href="https://www.unionsquarecafe.com/catering-store-v2/union-square-cafe/menu/order-settings">Pre-Order & Pick Up</a>
-                    <a href="https://www.ushg.com/shop" target="_blank" >Gift Cards</a>
+                    <a href="https://www.goldbelly.com/restaurants/cafe-peter" target="_blank">Nationwide Shipping</a>
+                    <a href="https://www.cafepeter.com/catering-store/menu/order-settings">Pre-Order & Pick Up</a>
+                    <a href="https://www.ushg.com/shop" target="_blank">Gift Cards</a>
                 </div>
             </div>
             <div class="nav-item">
-                <a href="anniversary.html">40th Anniversary</a>
+                <a href="anniversary.html">15th Anniversary</a>
             </div>
             <div class="nav-item">
-                <a href="https://www.sevenrooms.com/explore/unionsquarecafe/reservations/create/search?tracking=web" target="_blank" class="active">Reserve</a>
+                <a href="https://www.sevenrooms.com/explore/cafepeter/reservations/create/search?tracking=web" target="_blank" class="active">Reserve</a>
             </div>
         </nav>
 
@@ -986,29 +757,25 @@
                 <a href="menu.html">Menus</a>
             </div>
             <div class="mobile-nav-item">
-                 <a href="hours_location.html" >Hours & Location</a>
-
-
+                <a href="hours_location.html">Hours & Location</a>
             </div>
             <div class="mobile-nav-item">
-                   <a href="gallary.html">Gallery</a>
-
+                <a href="gallery.html">Gallery</a>
             </div>
             <div class="mobile-nav-item">
-                               <a href="private_dining.html">Private Dining</a>
-
+                <a href="private_dining.html">Private Dining</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="#">Shop</a>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
-             <div class="submenu" id="submenu-shop">
-            <a href="https://www.goldbelly.com/restaurants/union-square-cafe" target="_blank">Nationwide Shipping</a>
-            <a href="https://www.unionsquarecafe.com/catering-store-v2/union-square-cafe/menu/order-settings">Pre-Order & Pick Up</a>
-            <a href="https://www.ushg.com/shop" target="_blank">Gift Cards</a>
-        </div>
+            <div class="submenu" id="submenu-shop">
+                <a href="https://www.goldbelly.com/restaurants/cafe-peter" target="_blank">Nationwide Shipping</a>
+                <a href="https://www.cafepeter.com/catering-store/menu/order-settings">Pre-Order & Pick Up</a>
+                <a href="https://www.ushg.com/shop" target="_blank">Gift Cards</a>
+            </div>
             <div class="mobile-nav-item">
-                <a href="anniversary.html">40th Anniversary</a>
+                <a href="anniversary.html">15th Anniversary</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="#">Press</a>
@@ -1017,14 +784,13 @@
                 <a href="#">Careers</a>
             </div>
             <div class="mobile-nav-item">
-                <a href="https://www.sevenrooms.com/explore/unionsquarecafe/reservations/create/search?tracking=web" target="_blank" class="active">Reserve</a>
+                <a href="https://www.sevenrooms.com/explore/cafepeter/reservations/create/search?tracking=web" target="_blank" class="active">Reserve</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="#">Terms and Conditions</a>
             </div>
             <div class="mobile-nav-item">
-                <a href="#">101 E 19th St, New York, NY 10003 <br>
-                (212) 243-4020</a>
+                <a href="#">Aundh, Pune, India</a>
             </div>
         </div>
         
@@ -1046,19 +812,16 @@
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="./image/img1.png" class="d-block w-100" alt="Restaurant interior">
+                    <img src="./image/Gallary/carosel/img (1).jpg" class="d-block w-100" alt="Café interior">
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./image/img2.png" class="d-block w-100" alt="Signature dish">
+                    <img src="./image/Gallary/carosel/img (2).jpg" class="d-block w-100" alt="Signature dish">
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./image/img4.png" class="d-block w-100" alt="Dining experience">
+                    <img src="./image/Gallary/carosel/img (3).JPG" class="d-block w-100" alt="Dining experience">
                 </div>
                 <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./image/img5.png" class="d-block w-100" alt="Dining experience">
-                </div>
-                <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./image/img6.png" class="d-block w-100" alt="Dining experience">
+                    <img src="./image/Gallary/carosel/img (4).jpg" class="d-block w-100" alt="Dining experience">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -1076,13 +839,9 @@
     <!-- Main Content -->
     <main class="container">
         <section class="content-section">
-            <img src="./image/wine.png" alt="Wine Icon" class="wine-icon">
+            <img src="./image/wine.png" alt="Coffee Icon" class="wine-icon">
             <p>
-                Union Square Cafe is a neighborhood restaurant founded in 1985 by Danny Meyer. 
-                Today, helmed by Executive Chef Lena Ciardullo, it remains one of New York's most 
-                essential restaurants. Our menu draws inspiration from the Union Square Greenmarket 
-                and the experience is centered around warmth, comfort, celebration, and hospitality. 
-                At Union Square Cafe, you will always find a place to call home.
+                Born from a passion for coffee, culture, and community, Café Peter opened its doors in 2010 in Aundh, Pune, introducing a unique fusion of Korean café charm and India’s evolving taste for artisanal experiences. Founded by visionary entrepreneur Mr. Peter Chanseok Jung, the café quickly became a favourite for its gourmet donuts, premium coffee, and inviting ambiance. Over time, it transformed into a vibrant all-day dining destination, offering everything from Korean specialties to pastas, sandwiches, and pizzas. Today, with multiple outlets and a loyal following, Café Peter is more than just a café—it’s a place where flavours, friendships, and innovation come together.
             </p>
             
             <div class="gallery">
@@ -1103,16 +862,14 @@
 
         <section class="content-section">
             <p>
-                Union Square Cafe is open from 11:30am on weekdays and 11am on weekends. 
-                We serve lunch, aperitivo hour, dinner, and weekend brunch. You can find us 
-                on the southeast corner of 19th & Park Avenue.
+                Café Peter is open from 11:30am on weekdays and 11am on weekends. 
+                We serve breakfast, lunch, dinner, and weekend brunch. You can find us 
+                in Aundh, Pune.
             </p>
             <div class="info-links">
                 <a href="menu.html">Menus</a>
-                 <a href="hours_location.html" class="active">Hours & Location</a>
-
-
-                    <a href="https://www.sevenrooms.com/explore/unionsquarecafe/reservations/create/search?tracking=web" target="_blank" class="active">Reserve</a>
+                <a href="hours_location.html" class="active">Hours & Location</a>
+                <a href="https://www.sevenrooms.com/explore/cafepeter/reservations/create/search?tracking=web" target="_blank" class="active">Reserve</a>
             </div>
         </section>
     </main>
@@ -1129,37 +886,20 @@
             <a href="#">Press</a>
             <a href="#">Careers</a>
             <a href="#">Terms and Conditions</a>
-            <a href="#">101 E 19th St, New York, NY 10003</a>
-            <a href="#">(212) 243-4020</a>
+            <a href="#">Aundh, Pune, India</a>
+            <a href="#">Contact Us</a>
             <a href="#">Email Signup</a>
         </div>
     </footer>
 
     <!-- Mobile Reserve Button -->
-    <a href="https://www.sevenrooms.com/explore/unionsquarecafe/reservations/create/search?tracking=web" target="_blank " class="reserve-btn">
+    <a href="https://www.sevenrooms.com/explore/cafepeter/reservations/create/search?tracking=web" target="_blank" class="reserve-btn">
         Reserve
     </a>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        // Popup functionality
-        function closePopup() {
-            const popup = document.getElementById('popup');
-            popup.classList.remove('active');
-            setTimeout(() => {
-                popup.style.display = 'none';
-            }, 500);
-        }
-
-        function handleImageClick() {
-            const popupImage = document.querySelector('.popup-image');
-            popupImage.classList.add('clicked');
-            setTimeout(() => {
-                popupImage.classList.remove('clicked');
-            }, 500);
-        }
-
         // Mobile menu functionality
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobileNav');
@@ -1255,24 +995,6 @@
                 button.classList.add('paused');
             }
         }
-
-        // Show popup on page load
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const popup = document.getElementById('popup');
-                popup.style.display = 'flex';
-                setTimeout(() => {
-                    popup.classList.add('active');
-                }, 10);
-            }, 1000);
-        });
-
-        // Close popup when clicking outside
-        document.getElementById('popup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePopup();
-            }
-        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
