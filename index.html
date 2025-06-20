@@ -248,7 +248,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 30 Activating accessibility icon visibility near page bottom */
+        width: 30px;
         height: 30px;
         background: none;
         border: none;
@@ -465,7 +465,7 @@
         width: 80px;
         height: 80px;
         margin: 0 auto 30px;
-        background: url('./image/your_wine_image.jpg') no-repeat center;
+        background: url('./image/wine.png') no-repeat center;
         background-size: contain;
     }
 
@@ -737,7 +737,6 @@
             <div class="submenu" id="submenu-story">
                 <a href="about.html">About</a>
                 <a href="community.html">Values</a>
-
             </div>
             <div class="mobile-nav-item">
                 <a href="menu.html">Menus</a>
@@ -749,8 +748,7 @@
                 <a href="gallary.html">Gallery</a>
             </div>
             <div class="mobile-nav-item">
-        
-            <a href="career.html">Careers</a>
+                <a href="career.html">Careers</a>
             </div>
             <div class="mobile-nav-item">
                 <a href="reserved.html" target="_blank" class="active">Contact Us</a>
@@ -770,7 +768,7 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (First Carousel) -->
     <section class="hero">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -795,7 +793,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-            <button class="pause-play-btn" onclick="toggleCarousel()"></button>
+            <button class="pause-play-btn" onclick="toggleCarousel('heroCarousel')"></button>
         </div>
     </section>
 
@@ -806,10 +804,38 @@
             <p>
                 Born from a passion for coffee, culture, and community, Café Peter opened its doors in 2010 in Aundh, Pune, introducing a unique fusion of Korean café charm and India’s evolving taste for artisanal experiences. Founded by visionary entrepreneur Mr. Peter Chanseok Jung, the café quickly became a favourite for its gourmet donuts, premium coffee, and inviting ambiance. Over time, it transformed into a vibrant all-day dining destination, offering everything from Korean specialties to pastas, sandwiches, and pizzas. Today, with multiple outlets and a loyal following, Café Peter is more than just a café—it’s a place where flavours, friendships, and innovation come together.
             </p>
-            
-            
         </section>
-
+        <!-- Second Carousel -->
+        <section class="hero">
+            <div id="heroCarousel2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="./image/Gallary/carosel1/img (1).jpg" class="d-block w-100" alt="Café interior">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./image/Gallary/carosel1/img (2).jpg" class="d-block w-100" alt="Signature dish">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./image/Gallary/carosel1/img (3).JPG" class="d-block w-100" alt="Dining experience">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./image/Gallary/carosel1/img (4).jpg" class="d-block w-100" alt="Dining experience">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <img src="./image/Gallary/carosel1/img (5).jpg" class="d-block w-100" alt="Dining experience">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <button class="pause-play-btn" onclick="toggleCarousel('heroCarousel2')"></button>
+            </div>
+        </section>
         <section class="content-section">
             <p>
                 Café Peter is open from <strong>8 am</strong> on weekdays and on weekends. 
@@ -832,7 +858,6 @@
         </div>
         
         <div class="footer-links">
-    
             <a href="career.html">Careers</a>
             <a href="reserved.html">Contact Us</a>
             <a href="#">Email Signup</a>
@@ -930,9 +955,9 @@
         });
 
         // Carousel pause/play functionality
-        function toggleCarousel() {
-            const carousel = document.getElementById('heroCarousel');
-            const button = document.querySelector('.pause-play-btn');
+        function toggleCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const button = carousel.querySelector('.pause-play-btn');
             const bsCarousel = bootstrap.Carousel.getInstance(carousel);
             if (button.classList.contains('paused')) {
                 bsCarousel.cycle();
