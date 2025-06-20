@@ -676,34 +676,45 @@
             height: 100%;
             object-fit: cover;
         }
+
         /* Second Carousel Image Styles */
-#heroCarousel2 .carousel-img {
-    height: 70vh;
-    object-fit: cover;
-    width: 100%;
-}
+        #heroCarousel2 .carousel-img {
+            height: 50vh;
+            object-fit: cover;
+            width: 100%;
+        }
 
-@media (max-width: 768px) {
+        /* Ensure carousel slides are full height */
+        #heroCarousel2 .carousel-item {
+            height: 50vh;
+        }
+    }
+
+    /* Second Carousel Specific Styles */
     #heroCarousel2 .carousel-img {
-        height: 50vh;
+        height: 70vh;
+        object-fit: cover;
+        width: 100%;
     }
-}
 
-/* Ensure carousel slides are full height */
-#heroCarousel2 .carousel-item {
-    height: 70vh;
-}
+    @media (max-width: 768px) {
+        #heroCarousel2 .carousel-item .row {
+            display: flex;
+            flex-direction: column;
+        }
 
-@media (max-width: 768px) {
-    #heroCarousel2 .carousel-item {
-        height: 50vh;
-    }
-}
+        #heroCarousel2 .carousel-item .col-4 {
+            width: 100%;
+            display: none; /* Hide all images by default */
+        }
 
-/* Center empty column if needed */
-#heroCarousel2 .carousel-item .row .col-4:empty {
-    background-color: transparent;
-}
+        #heroCarousel2 .carousel-item.active .col-4:first-child {
+            display: block; /* Show only the first image in active slide */
+        }
+
+        #heroCarousel2 .carousel-item .col-4:empty {
+            display: none; /* Hide empty columns */
+        }
     }
     </style>
 </head>
@@ -833,55 +844,50 @@
                 Born from a passion for coffee, culture, and community, Café Peter opened its doors in 2010 in Aundh, Pune, introducing a unique fusion of Korean café charm and India’s evolving taste for artisanal experiences. Founded by visionary entrepreneur Mr. Peter Chanseok Jung, the café quickly became a favourite for its gourmet donuts, premium coffee, and inviting ambiance. Over time, it transformed into a vibrant all-day dining destination, offering everything from Korean specialties to pastas, sandwiches, and pizzas. Today, with multiple outlets and a loyal following, Café Peter is more than just a café—it’s a place where flavours, friendships, and innovation come together.
             </p>
         </section>
+
         <!-- Second Carousel -->
-        <!-- Second Carousel -->
-<section class="hero">
-    <div id="heroCarousel2" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Slide 1: 3 images -->
-            <div class="carousel-item active" data-bs-interval="5000">
-                <div class="row g-0">
-                    <div class="col-4">
-                        <img src="./image/Gallary/carosel1/img (1).jpg" class="d-block w-100 carousel-img" alt="Café interior">
+        <section class="hero">
+            <div id="heroCarousel2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (1).jpg" class="d-block w-100 carousel-img" alt="Café interior">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (2).jpg" class="d-block w-100 carousel-img" alt="Signature dish">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (3).JPG" class="d-block w-100 carousel-img" alt="Dining experience">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img src="./image/Gallary/carosel1/img (2).jpg" class="d-block w-100 carousel-img" alt="Signature dish">
-                    </div>
-                    <div class="col-4">
-                        <img src="./image/Gallary/carosel1/img (3).JPG" class="d-block w-100 carousel-img" alt="Dining experience">
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (4).jpg" class="d-block w-100 carousel-img" alt="Dining experience">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (5).jpg" class="d-block w-100 carousel-img" alt="Dining experience">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (3).JPG" class="d-block w-100 carousel-img" alt="Dining experience">
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <button class="pause-play-btn" onclick="toggleCarousel('heroCarousel2')"></button>
             </div>
-            <!-- Slide 2: 2 images (remaining) -->
-            <div class="carousel-item" data-bs-interval="5000">
-                <div class="row g-0">
-                    <div class="col-4">
-                        <img src="./image/Gallary/carosel1/img (4).jpg" class="d-block w-100 carousel-img" alt="Dining experience">
-                    </div>
-                    <div class="col-4">
-                        <img src="./image/Gallary/carosel1/img (5).jpg" class="d-block w-100 carousel-img" alt="Dining experience">
-                    </div>
-                     <div class="col-4">
-                        <img src="./image/Gallary/carosel1/img (3).JPG" class="d-block w-100 carousel-img" alt="Dining experience">
-                    </div>
-                    <div class="col-4">
-                        <!-- Empty column to maintain alignment -->
-                        <div class="w-100 h-100"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel2" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel2" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-        <button class="pause-play-btn" onclick="toggleCarousel('heroCarousel2')"></button>
-    </div>
-</section>
+        </section>
+
         <section class="content-section">
             <p>
                 Café Peter is open from <strong>08:00 AM</strong> on weekdays and on weekends. 
