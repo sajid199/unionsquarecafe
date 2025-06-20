@@ -398,8 +398,31 @@
         font-size: 1.1rem;
         line-height: 1.8;
         max-width: 800px;
-        margin: 0 auto;
+        margin: 0 auto 20px; /* Added margin-bottom for spacing */
         color: #555;
+    }
+
+    .content-section ul {
+        list-style: none;
+        padding: 0;
+        max-width: 800px;
+        margin: 20px auto 0;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .content-section ul li {
+        margin-bottom: 12px; /* Increased spacing between list items */
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .content-section ul li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #c8102e;
+        font-size: 1.2rem;
     }
 
     /* Team Section - Improved for mobile */
@@ -625,54 +648,6 @@
         transition: filter 0.3s ease;
     }
 
-    /* Recipe Section */
-    .recipe-section {
-        text-align: center;
-        margin-bottom: 80px;
-        display: block;
-    }
-
-    .recipe-image {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        margin: 0 auto 40px;
-        display: block;
-    }
-
-    .recipe-section p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        max-width: 800px;
-        margin: 0 auto 40px;
-        color: #555;
-    }
-
-    .recipe-section h4 {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .recipe-section ul {
-        text-align: left;
-        max-width: 800px;
-        margin: 0 auto;
-        font-size: 1rem;
-        color: #555;
-    }
-
-    .recipe-section ul li {
-        margin-bottom: 10px;
-    }
-
-    .recipe-section .winner-note {
-        font-style: italic;
-        font-size: 0.9rem;
-        color: #777;
-        margin-top: 20px;
-    }
-
     /* Footer */
     .footer {
         background-color: rgb(179,8,56);
@@ -819,20 +794,12 @@
             font-size: 1rem; /* Slightly smaller paragraph on mobile */
         }
 
-        .recipe-image {
-            max-width: 300px;
+        .content-section p {
+            margin-bottom: 15px; /* Adjusted for mobile */
         }
 
-        /* Improved popup for mobile */
-        .popup-content {
-            padding: 30px 20px;
-            max-height: 85vh;
-        }
-
-        .popup-close {
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
+        .content-section ul li {
+            margin-bottom: 10px;
         }
     }
 
@@ -858,12 +825,8 @@
             font-size: 0.9rem;
         }
 
-        .recipe-image {
-            max-width: 250px;
-        }
-
-        .popup-content {
-            padding: 25px 15px;
+        .content-section p {
+            margin-bottom: 12px;
         }
 
         .carousel-item img {
@@ -899,19 +862,13 @@
                 <a href="menu.html">Menus</a>
             </div>
             <div class="nav-item">
-                 <a href="hours_location.html" >Hours & Location</a>
-
-
+                <a href="hours_location.html">Hours & Location</a>
             </div>
             <div class="nav-item">
-                   <a href="gallary.html">Gallery</a>
-
+                <a href="gallary.html">Gallery</a>
             </div>
-            
-            
-            
             <div class="nav-item">
-                    <a href="reserved.html" target="_blank" class="active">Contact Us</a>
+                <a href="reserved.html" target="_blank" class="active">Contact Us</a>
             </div>
         </nav>
 
@@ -927,71 +884,67 @@
     </header>
 
     <!-- Mobile Navigation -->
-<div id="mobileNav" class="mobile-nav">
-    <div class="mobile-nav-links">
-        <div class="mobile-nav-item">
-            <a href="#" class="active">Our Story</a>
-            <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="submenu" id="submenu-story">
-            <a href="about.html" class="active">About</a>
-            <a href="community.html">Community</a>
-        </div>
-        <div class="mobile-nav-item">
-            <a href="menu.html">Menus</a>
-        </div>
-        <div class="mobile-nav-item">
-            <a href="hours_location.html">Hours & Location</a>
-        </div>
-        <div class="mobile-nav-item">
-            <a href="gallary.html">Gallery</a>
-        </div>
-        
-        <div class="mobile-nav-item">
-    
-            <a href="career.html">Careers</a>
-        </div>
-        <div class="mobile-nav-item">
+    <div id="mobileNav" class="mobile-nav">
+        <div class="mobile-nav-links">
+            <div class="mobile-nav-item">
+                <a href="#" class="active">Our Story</a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <div class="submenu" id="submenu-story">
+                <a href="about.html" class="active">About</a>
+                <a href="community.html">Community</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="menu.html">Menus</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="hours_location.html">Hours & Location</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="gallary.html">Gallery</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="career.html">Careers</a>
+            </div>
+            <div class="mobile-nav-item">
                 <a href="reserved.html" target="_blank">Contact Us</a>
+            </div>
         </div>
         
-        
-    </div>
-    
-    <!-- Mobile Footer -->
-    <div class="mobile-nav-footer">
-        <div class="mobile-social-icons">
-            <a href="#" class="mobile-social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="mobile-social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="mobile-social-icon"><i class="fab fa-instagram"></i></a>
-        </div>
-        <div class="mobile-powered-by">
-            powered by BentoBox
+        <!-- Mobile Footer -->
+        <div class="mobile-nav-footer">
+            <div class="mobile-social-icons">
+                <a href="#" class="mobile-social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="mobile-social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="mobile-social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="mobile-powered-by">
+                powered by BentoBox
+            </div>
         </div>
     </div>
-</div>
 
     <!-- Main Content -->
     <main class="container">
         <section class="content-section">
-    <p>
-        Café Peter, founded in 2010 in Aundh, Pune, pioneered a vibrant dining experience by blending the rich aromas of fresh coffee with the irresistible appeal of gourmet donuts, creating a beloved community hub.
-    </p>
-    <p>
-        Conceived by Mr. Peter Chanseok Jung, a visionary entrepreneur from Korea, Café Peter—originally Café Peter Donut—evolved from a cozy café into a dynamic all-day dining destination. With a commitment to premium ingredients, creative expression, and warm hospitality, it now offers a diverse menu featuring Korean-inspired dishes, sandwiches, bagels, pastas, pizzas, and more, catering to a wide spectrum of tastes.
-    </p>
-    <p>
-        More than a café, Café Peter is a community where people connect, unwind, and enjoy good food in thoughtfully designed outlets exuding youthful energy. With a presence across Pune and beyond, it continues to innovate, delivering quality and customer delight one cup of coffee and one plate of food at a time.
-    </p>
-    <h3 style="color: #c8102e;">What Is Café Peter...?</h3>
-    <ul style="text-align: center; list-style: none; padding: 0; max-width: 800px; margin: 20px auto 0;">
-        <li>A Beautiful & Vibrant Place</li>
-        <li>Serving Fresh & Delicious Food, Coffee & Desserts</li>
-        <li>Happy & Confident Team</li>
-        <li>Café with Good Vibe & Positive Energy</li>
-        <li>Excellent Standards Delivered Every Day</li>
-    </ul>
-</section>
+            <p>
+                Café Peter, founded in 2010 in Aundh, Pune, pioneered a vibrant dining experience by blending the rich aromas of fresh coffee with the irresistible appeal of gourmet donuts, creating a beloved community hub.
+            </p>
+            <p>
+                Conceived by Mr. Peter Chanseok Jung, a visionary entrepreneur from Korea, Café Peter—originally Café Peter Donut—evolved from a cozy café into a dynamic all-day dining destination. With a commitment to premium ingredients, creative expression, and warm hospitality, it now offers a diverse menu featuring Korean-inspired dishes, sandwiches, bagels, pastas, pizzas, and more, catering to a wide spectrum of tastes.
+            </p>
+            <p>
+                More than a café, Café Peter is a community where people connect, unwind, and enjoy good food in thoughtfully designed outlets exuding youthful energy. With a presence across Pune and beyond, it continues to innovate, delivering quality and customer delight one cup of coffee and one plate of food at a time.
+            </p>
+            <h3 style="color: #c8102e; margin-top: 40px;">What Is Café Peter...?</h3>
+            <ul style="list-style: none;">
+                <ol>A Beautiful & Vibrant Place</ol>
+                <ol>Serving Fresh & Delicious Food, Coffee & Desserts</ol>
+                <ol>Happy & Confident Team</ol>
+                <ol>Café with Good Vibe & Positive Energy</ol>
+                <ol>Excellent Standards Delivered Every Day<ol>
+            </ul>
+        </section>
 
         <!-- History Section -->
         <section class="history-section">
@@ -1046,37 +999,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Recipe Section -->
-        <section class="recipe-section">
-            <h3 style="color: #c8102e;">Union Square Cafe's Bar Nuts</h3>
-            <img src="./image/Gallary/about/nut_bar_receipi.avif" alt="Yields Cups" class="recipe-image">
-            <p>
-                Every afternoon at about 4:45, a piping hot batch emerges from our ovens and is sent to the bar, where the sweet rosemary fragrance wafts throughout the restaurant. Can't make it in? They also make for a great dinner party snack at home.
-            </p>
-            <h4>Yields 5 Cups</h4>
-            <h4>Ingredients</h4>
-            <ul>
-                <li>¼ pound each of peeled peanuts, cashews, brazil nuts, hazelnuts, walnuts, pecans, and whole unpeeled almonds, or 1¼ pounds unsalted, assorted nuts</li>
-                <li>2 tablespoons coarsely chopped fresh rosemary</li>
-                <li>½ teaspoon cayenne</li>
-                <li>2 teaspoons dark brown sugar</li>
-                <li>2 teaspoons kosher salt</li>
-                <li>1 tablespoon butter, melted</li>
-            </ul>
-            <h4>Method</h4>
-            <ul>
-                <li>Preheat the oven to 350 degrees Fahrenheit.</li>
-                <li>Toss the nuts in a large bowl to combine and spread them out on a cookie sheet.</li>
-                <li>Toast in the oven until they become light golden brown, about 10 minutes.</li>
-                <li>In the large bowl, combine the rosemary, cayenne, brown sugar, salt, and melted butter.</li>
-                <li>Thoroughly toss the warm toasted nuts with the spiced butter and serve warm.</li>
-            </ul>
-            <p class="winner-note">
-                Winner of the Union Square Cafe Cookbook, "
-            </p>
-            From <a style="color: #000; text-decoration: underline; " href="https://www.amazon.com/Union-Square-Cafe-Cookbook-Restaurant/dp/0062232398" target="_blank">The New York Press award for "Best Bar Nuts in New York</a>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -1086,11 +1008,8 @@
             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
         </div>
-        
         <div class="footer-links">
-    
             <a href="career.html">Careers</a>
-           
             <a href="#">(212) 243-4020</a>
             <a href="#">Email Signup</a>
         </div>
