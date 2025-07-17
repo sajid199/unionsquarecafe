@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Union Square Cafe - 40th Anniversary</title>
+    <title>Café Peter</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Font Awesome for icons -->
@@ -14,697 +14,709 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            font-family: 'Work Sans', sans-serif;
-            background-color: #FFF6ED;
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    body {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Work Sans', sans-serif;
+        background-color: #FFF6ED;
+        color: #333;
+        line-height: 1.6;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
 
-        /* Header */
-        .header {
-            background-color: #FFF6ED;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-        }
+    /* Header */
+    .header {
+        background-color: #FFF6ED;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
 
-        /* Accessibility Icon */
-        .accessibility-icon {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #c8102e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .accessibility-icon.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    /* Accessibility Icon */
+    .accessibility-icon {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #c8102e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .accessibility-icon.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-        .logo-img {
-            max-width: 213px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+    .logo-img {
+        max-width: 213px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 
-        .desktop-logo {
-            display: block;
-        }
+    .desktop-logo {
+        display: block;
+    }
 
-        .mobile-logo {
-            display: none;
-        }
+    .mobile-logo {
+        display: none;
+    }
 
-        .logo-icon {
-            width: 40px;
-            height: 30px;
-            background-color: #c8102e;
-            margin: 0 auto 10px;
-            position: relative;
-        }
+    .logo-icon {
+        width: 40px;
+        height: 30px;
+        background-color: #c8102e;
+        margin: 0 auto 10px;
+        position: relative;
+    }
 
-        .logo-icon::before {
-            content: '';
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            right: 8px;
-            height: 2px;
-            background-color: white;
-        }
+    .logo-icon::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        height: 2px;
+        background-color: white;
+    }
 
-        .logo-icon::after {
-            content: '';
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
-            right: 8px;
-            height: 2px;
-            background-color: white;
-        }
+    .logo-icon::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        right: 8px;
+        height: 2px;
+        background-color: white;
+    }
 
-        .logo h1 {
-            color: #c8102e;
-            font-size: 2rem;
-            font-weight: normal;
-            letter-spacing: 2px;
-        }
+    .logo h1 {
+        color: #c8102e;
+        font-size: 2rem;
+        font-weight: normal;
+        letter-spacing: 2px;
+    }
 
-        /* Navigation */
+    /* Navigation */
+    .nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+        padding: 5px 0;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #c8102e;
+        transition: width 0.3s ease-in-out;
+        transform-origin: left;
+    }
+
+    .nav a:hover::after,
+    .nav a.active::after {
+        width: 50%;
+        left: 25%;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+        color: #c8102e;
+    }
+
+    .arrow {
+        font-size: 14px;
+        color: #333;
+        transition: transform 0.3s ease;
+    }
+
+    /* Dropdown for desktop */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #FFF6ED;
+        min-width: 200px;
+        z-index: 1;
+        padding: 10px 0;
+        margin-top: 5px;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        color: #333;
+        text-decoration: none;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: rgba(200, 16, 46, 0.1);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1002;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        width: 25px;
+        height: 20px;
+        justify-content: space-between;
+        transition: opacity 0.3s ease;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle.active .hamburger {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .mobile-nav-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: #c8102e;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu-toggle.active .mobile-nav-close {
+        opacity: 1;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #FFF6ED;
+        z-index: 1001;
+        padding: 80px 40px 120px;
+        overflow-y: auto;
+        transition: top 0.5s ease-in-out;
+        min-height: 100vh;
+    }
+
+    .mobile-nav.active {
+        display: flex;
+        flex-direction: column;
+        top: 83px;
+    }
+
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .mobile-nav-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mobile-nav-item a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+        padding: 10px 0;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-nav-item a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #c8102e;
+        transition: width 0.3s ease-in-out;
+        transform-origin: left;
+    }
+
+    .mobile-nav-item a:hover::after,
+    .mobile-nav-item a.active::after {
+        width: 50%;
+        left: 25%;
+    }
+
+    .mobile-nav-item a:hover,
+    .mobile-nav-item a.active {
+        color: #c8102e;
+    }
+
+    .submenu {
+        display: none;
+        margin-left: 20px;
+        text-align: center;
+    }
+
+    .submenu a {
+        display: block;
+        font-size: 1rem;
+        color: #666;
+        padding: 10px 0;
+        text-decoration: none;
+    }
+
+    /* Mobile Footer */
+    .mobile-nav-footer {
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .mobile-social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .mobile-social-icon {
+        color: #333;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .mobile-powered-by {
+        font-size: 0.8rem;
+        color: #fff;
+        margin-top: 10px;
+        background-color: #c8102e;
+        padding: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 70vh;
+        position: relative;
+        margin-bottom: 60px;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 120px;
+    }
+
+    .carousel-item img {
+        height: 70vh;
+        object-fit: cover;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+        opacity: 1;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        background-size: 60%;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-control-prev-icon:hover,
+    .carousel-control-next-icon:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .pause-play-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+    }
+
+    .pause-play-btn:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .pause-play-btn::before {
+        content: '❚❚';
+        font-size: 20px;
+    }
+
+    .pause-play-btn.paused::before {
+        content: '▶';
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .content-section {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .wine-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 30px;
+        /* background: url('./image/Gallary/coffee.png') no-repeat center; */
+        background-size: contain;
+    }
+
+    .content-section h3 {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto 40px;
+        color: #555;
+    }
+
+    /* Image Gallery */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .gallery-item {
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Info Section */
+    .info-section {
+        padding: 60px 20px;
+        text-align: center;
+        margin: 60px 0;
+        border-radius: 12px;
+    }
+
+    .info-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .info-links {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .info-links a {
+        text-decoration: underline;
+        color: #333;
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+        background-color: rgb(179,8,56);
+        color: white;
+        padding: 40px 20px 20px;
+        text-align: center;
+        flex-shrink: 0;
+        width: 100vw;
+        max-width: none;
+    }
+
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .footer-contact {
+        margin: 20px 0;
+        font-size: 0.9rem;
+    }
+
+    .footer-powered {
+        font-size: 0.8rem;
+        color: #666;
+        background-color: #e6dcd3;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgb(179,8,56);
+        font-size: 20px;
+    }
+
+    .reserve-btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #FFF6ED;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.5rem;
+        text-decoration: none;
+        z-index: 100;
+        display: none;
+        border: 2px solid #c8102e;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
         .nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .nav-item {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1rem;
-            padding: 5px 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #c8102e;
-            transition: width 0.3s ease-in-out;
-            transform-origin: left;
-        }
-
-        .nav a:hover::after,
-        .nav a.active::after {
-            width: 50%;
-            left: 25%;
-        }
-
-        .nav a:hover,
-        .nav a.active {
-            color: #c8102e;
-        }
-
-        .arrow {
-            font-size: 14px;
-            color: #333;
-            transition: transform 0.3s ease;
-        }
-
-        /* Dropdown for desktop */
-        .dropdown-menu {
             display: none;
-            position: absolute;
-            background-color: #FFF6ED;
-            min-width: 200px;
-            z-index: 1;
-            padding: 10px 0;
-            margin-top: 5px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
-        .dropdown-menu a {
-            display: block;
-            padding: 10px 20px;
-            color: #333;
-            text-decoration: none;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: rgba(200, 16, 46, 0.1);
-        }
-
-        /* Mobile Menu */
         .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1002;
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            padding: 0;
-        }
-
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            width: 25px;
-            height: 20px;
-            justify-content: space-between;
-            transition: opacity 0.3s ease;
-        }
-
-        .hamburger span {
-            width: 100%;
-            height: 2px;
-            background-color: #333;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu-toggle.active .hamburger {
-            opacity: 0;
-            position: absolute;
-        }
-
-        .mobile-nav-close {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 30px;
-            height: 30px;
-            background: none;
-            border: none;
-            font-size: 30px;
-            color: #c8102e;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .mobile-menu-toggle.active .mobile-nav-close {
-            opacity: 1;
-        }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #FFF6ED;
-            z-index: 1001;
-            padding: 80px 40px 120px;
-            overflow-y: auto;
-            transition: top 0.5s ease-in-out;
-            min-height: 100vh;
-        }
-
-        .mobile-nav.active {
-            display: flex;
-            flex-direction: column;
-            top: 83px;
-        }
-
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            text-align: center;
-            flex-grow: 1;
-        }
-
-        .mobile-nav-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .mobile-nav-item a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.2rem;
-            padding: 10px 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .mobile-nav-item a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #c8102e;
-            transition: width 0.3s ease-in-out;
-            transform-origin: left;
-        }
-
-        .mobile-nav-item a:hover::after,
-        .mobile-nav-item a.active::after {
-            width: 50%;
-            left: 25%;
-        }
-
-        .mobile-nav-item a:hover,
-        .mobile-nav-item a.active {
-            color: #c8102e;
-        }
-
-        .submenu {
-            display: none;
-            margin-left: 20px;
-            text-align: center;
-        }
-
-        .submenu a {
             display: block;
-            font-size: 1rem;
-            color: #666;
-            padding: 10px 0;
-            text-decoration: none;
+             margin-top: 35px;
         }
 
-        /* Mobile Footer */
-        .mobile-nav-footer {
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-            bottom: 0;
-            width: 100%;
+        .hero {
+            height: 50vh;
+            margin-top: 100px;
         }
 
-        .mobile-social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
+        .carousel-item img {
+            height: 50vh;
         }
 
-        .mobile-social-icon {
-            color: #333;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        .mobile-powered-by {
-            font-size: 0.8rem;
-            color: #fff;
-            margin-top: 10px;
-            background-color: #c8102e;
-            padding: 10px;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            margin-top: 140px; /* Adjusted for fixed header */
-            display: block;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            background: url('./image/Gallary/anniversary/img1.avif') no-repeat center center/cover;
-            height: 90vh;
-            color: white;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 120px; /* Adjusted for fixed header */
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 0 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin: 0 auto;
-        }
-
-        /* Anniversary Section */
-        .anniversary-section {
-            text-align: center;
-            margin: 60px 0;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            color: #c8102e;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-            font-weight: normal;
-            text-align: center;
-        }
-
-        .anniversary-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .anniversary-item {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .anniversary-item.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .anniversary-item img {
-            width: 50%;
-            height: auto;
-            border-radius: 8px;
-            object-fit: cover;
-            max-height: 400px;
-        }
-
-        .anniversary-item .content {
-            width: 50%;
-            text-align: left;
-            padding: 0 20px;
-        }
-
-        .anniversary-item p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .anniversary-item a {
-            color: #c8102e;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .anniversary-item a:hover {
-            color: #8b1538;
-        }
-
-        /* Stay Tuned Section */
-        .stay-tuned-section {
-            text-align: center;
-            margin: 80px 0;
-            padding: 0 20px;
-        }
-
-        .stay-tuned-section p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .stay-tuned-section a {
-            color: #c8102e;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .stay-tuned-section a:hover {
-            color: #8b1538;
-        }
-
-        /* Footer */
         .footer {
-            background-color: rgb(179,8,56);
-            color: white;
-            padding: 40px 20px 20px;
-            text-align: center;
-            flex-shrink: 0;
-            width: 100vw;
-            max-width: none;
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
+            display: none;
         }
 
         .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .footer-contact {
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-
-        .footer-powered {
-            font-size: 0.8rem;
-            color: #666;
-            background-color: #e6dcd3;
-            padding: 10px;
-            margin-top: 10px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: rgb(179,8,56);
-            font-size: 20px;
+        .info-links {
+            flex-direction: column;
+            gap: 20px;
         }
 
         .reserve-btn {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #FFF6ED;
-            color: #000;
-            text-align: center;
-            padding: 10px;
-            font-size: 1.5rem;
-            text-decoration: none;
-            z-index: 100;
+            display: block;
+        }
+
+        .desktop-logo {
             display: none;
-            border: 2px solid #c8102e;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
+        .mobile-logo {
+            display: block;
+            margin-left: 0px;
+        }
+    }
 
-            .mobile-menu-toggle {
-                display: block;
-                 margin-top: 35px;
-            }
-
-            .footer {
-                display: none;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .reserve-btn {
-                display: block;
-            }
-
-            .desktop-logo {
-                display: none;
-            }
-
-            .mobile-logo {
-                display: block;
-                margin-left: 0px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .anniversary-item {
-                flex-direction: column !important;
-                text-align: center;
-                gap: 20px;
-                margin-bottom: 40px;
-            }
-
-            .anniversary-item img {
-                width: 100%;
-                max-height: 300px;
-                margin-bottom: 15px;
-            }
-
-            .anniversary-item .content {
-                width: 100%;
-                padding: 0 10px;
-                text-align: center;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
-            }
-
-            .stay-tuned-section {
-                margin: 60px 0;
-            }
-
-            .stay-tuned-section p {
-                font-size: 0.9rem;
-            }
-
-            .hero-section {
-                height: 70vh;
-                margin-top: 80px;
-            }
+    @media (max-width: 480px) {
+        .hero {
+            height: 50vh;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.2rem;
-            }
-
-            .anniversary-item img {
-                max-height: 250px;
-            }
-
-            .anniversary-item p {
-                font-size: 0.9rem;
-            }
-
-            .stay-tuned-section p {
-                font-size: 0.8rem;
-            }
-
-            .hero-section {
-                height: 60vh;
-            }
+        .gallery {
+            grid-template-columns: 1fr;
         }
+    }
+
+    @media (max-width: 768px) {
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Second Carousel Image Styles */
+        #heroCarousel2 .carousel-img {
+            height: 50vh;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Ensure carousel slides are full height */
+        #heroCarousel2 .carousel-item {
+            height: 50vh;
+        }
+    }
+
+    /* Second Carousel Specific Styles */
+    #heroCarousel2 .carousel-img {
+        height: 70vh;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        #heroCarousel2 .carousel-item .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #heroCarousel2 .carousel-item .col-4 {
+            width: 100%;
+            display: none; /* Hide all images by default */
+        }
+
+        #heroCarousel2 .carousel-item.active .col-4:first-child {
+            display: block; /* Show only the first image in active slide */
+        }
+
+        #heroCarousel2 .carousel-item .col-4:empty {
+            display: none; /* Hide empty columns */
+        }
+    }
     </style>
 </head>
 <body>
@@ -717,8 +729,8 @@
     <header class="header">
         <div class="logo">
             <a href="index.html">
-                <img src="./image/logo.png" alt="Union Square Cafe" class="logo-img desktop-logo">
-                <img src="./image/mobile_logo.png" alt="Union Square Cafe" class="logo-img mobile-logo">
+                <img src="./image/logo.png" alt="Café Peter" class="logo-img desktop-logo">
+                <img src="./image/mobile_logo.png" alt="Café Peter" class="logo-img mobile-logo">
             </a>
         </div>
         <nav class="nav">
@@ -737,13 +749,10 @@
                 <a href="hours_location.html">Hours & Location</a>
             </div>
             <div class="nav-item">
-                <a href="gallery.html">Gallery</a>
+                <a href="gallary.html">Gallery</a>
             </div>
-            
-            
-            
             <div class="nav-item">
-                <a href="reserved.html" target="_blank">Contact Us</a>
+                <a href="reserved.html" target="_blank" class="active">Contact Us</a>
             </div>
         </nav>
 
@@ -768,7 +777,6 @@
             <div class="submenu" id="submenu-story">
                 <a href="about.html">About</a>
                 <a href="community.html">Values</a>
-
             </div>
             <div class="mobile-nav-item">
                 <a href="menu.html">Menus</a>
@@ -777,27 +785,14 @@
                 <a href="hours_location.html">Hours & Location</a>
             </div>
             <div class="mobile-nav-item">
-                <a href="gallery.html">Gallery</a>
-            </div>
-            
-            <div class="mobile-nav-item">
-                <i class="fas fa-chevron-down arrow"></i>
-            </div>
-            <div class="submenu" id="submenu-shop">
-                <a href="https://www.goldbelly.com/restaurants/union-square-cafe" target="_blank">Nationwide Shipping</a>
-                <a href="https://www.unionsquarecafe.com/catering-store-v2/union-square-cafe/menu/order-settings">Pre-Order & Pick Up</a>
-                <a href="https://www.ushg.com/shop" target="_blank">Gift Cards</a>
-            </div>
-            
-            
-            <div class="mobile-nav-item">
-        
-            <a href="career.html">Careers</a>
+                <a href="gallary.html">Gallery</a>
             </div>
             <div class="mobile-nav-item">
-                <a href="reserved.html" target="_blank">Contact Us</a>
+                <a href="career.html">Careers</a>
             </div>
-        
+            <div class="mobile-nav-item">
+                <a href="reserved.html" target="_blank" class="active">Contact Us</a>
+            </div>
         </div>
         
         <!-- Mobile Footer -->
@@ -811,9 +806,6 @@
 <a href="https://x.com/CPD_PUNE?t=DbgJ_O7bteuwBUeBFLBfgQ&s=09" class="mobile-social-icon" target="_blank">
   <i class="fab fa-twitter"></i>
 </a></i>
-
-
-
 </a>
 
 
@@ -827,47 +819,97 @@
         </div>
     </div>
 
+    <!-- Hero Section (First Carousel) -->
+    <section class="hero">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item " data-bs-interval="4000">
+                    <img src="./image/Gallary/carosel/img (1).jpg" class="d-block w-100" alt="Café interior">
+                </div>
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="./image/Gallary/carosel/img (2).jpg" class="d-block w-100" alt="Signature dish">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./image/Gallary/carosel/img (3).JPG" class="d-block w-100" alt="Dining experience">
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./image/Gallary/carosel/img (4).jpg" class="d-block w-100" alt="Dining experience">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <button class="pause-play-btn" onclick="toggleCarousel('heroCarousel')"></button>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main class="container">
-        <section class="hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>CELEBRATING 40 YEARS</h1>
-                <p>This year, Union Square Cafe celebrates four incredible decades. We're endlessly grateful to our amazing team and loyal guests — past, present, and future — who have made Union Square Cafe more than just a restaurant. It's been an honor to share all of life's moments with you.</p>
+        <section class="content-section">
+            <img src="./image/Gallary/coffee.png" alt="Coffee Icon" class="wine-icon">
+            <p>
+                Born from a passion for coffee, culture, and community, Café Peter opened its doors in 2010 in Aundh, Pune, introducing a unique fusion of Korean café charm and India’s evolving taste for artisanal experiences. Founded by visionary entrepreneur Mr. Peter Chanseok Jung, the café quickly became a favourite for its gourmet donuts, premium coffee, and inviting ambiance. Over time, it transformed into a vibrant all-day dining destination, offering everything from Korean specialties to pastas, sandwiches, and pizzas. Today, with multiple outlets and a loyal following, Café Peter is more than just a café—it’s a place where flavours, friendships, and innovation come together.
+            </p>
+        </section>
+
+        <!-- Second Carousel -->
+        <section class="hero">
+            <div id="heroCarousel2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="4000">
+                        <div class="row g-md-2 mx-1"> <!-- Added g-3 for gap between columns and mx-1 for side margins -->
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (1).jpg" class="d-block w-100 carousel-img rounded" alt="Café interior" style="height: 300px; object-fit: cover; padding: 2px;">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (2).jpg" class="d-block w-100 carousel-img rounded" alt="Signature dish" style="height: 300px; object-fit: cover; padding: 2px;">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (3).jpg" class="d-block w-100 carousel-img rounded" alt="Dining experience" style="height: 300px; object-fit: cover; padding: 2px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <div class="row g-3 mx-1">
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (4).jpg" class="d-block w-100 carousel-img rounded" alt="Dining experience" style="height: 300px; object-fit: cover; padding: 2px;">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (5).jpg" class="d-block w-100 carousel-img rounded" alt="Dining experience" style="height: 300px; object-fit: cover; padding: 2px;">
+                            </div>
+                            <div class="col-4">
+                                <img src="./image/Gallary/carosel1/img (3).jpg" class="d-block w-100 carousel-img rounded" alt="Dining experience" style="height: 300px; object-fit: cover; padding: 2px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <button class="pause-play-btn" onclick="toggleCarousel('heroCarousel2')"></button>
             </div>
         </section>
 
-        <section class="anniversary-section">
-            <div class="anniversary-grid">
-                <div class="anniversary-item">
-                    <img src="./image/Gallary/anniversary/img2.avif" alt="Bubbles">
-                    <div class="content">
-                        <h2 class="section-title">40 Years of Memories</h2>
-                        <p>We'd love to hear your favorite memory from over the years — perhaps a run-in or meet cute, first (or last...) date or a proposal.</p>
-                        <p><a href="#">Share your Memory</a></p>
-                    </div>
-                </div>
-                <div class="anniversary-item reverse">
-                    <img src="./image/Gallary/anniversary/img3.avif" alt="Then and Now">
-                    <div class="content">
-                        <h2 class="section-title">Then & Now</h2>
-                        <p>Stories from 40 years through the eyes of our friends and staff.</p>
-                    </div>
-                </div>
-                <div class="anniversary-item">
-                    <img src="./image/Gallary/anniversary/img2.png" alt="Newsletter">
-                    <div class="content">
-                        <h2 class="section-title">Newsletter Archive</h2>
-                        <p>Read our newsletters from over the years by Danny Meyer featuring recipes, stories, events, cartoons, and photos from 1988 to 2009.</p>
-                        <p><a href="#">Read Here</a></p>
-                    </div>
-                </div>
+        <section class="content-section">
+            <p>
+                Café Peter is open from <strong>08:00 AM</strong> on weekdays and on weekends. 
+                We serve breakfast, lunch, dinner, and weekend brunch. 
+            </p>
+            <div class="info-links">
+                <a href="menu.html">Menus</a>
+                <a href="hours_location.html" class="active">Hours & Location</a>
+                <a href="reserved.html" target="_blank" class="active">Contact Us</a>
             </div>
-        </section>
-
-        <section class="stay-tuned-section">
-            <h2 class="section-title">Stay Tuned...</h2>
-            <p><a href="#">Sign up for our newsletter</a> to be the first to hear about our anniversary celebrations!</p>
         </section>
     </main>
 
@@ -887,9 +929,8 @@
         </div>
         
         <div class="footer-links">
-    
             <a href="career.html">Careers</a>
-            <a href="#">(212) 243-4020</a>
+            <a href="reserved.html">Contact Us</a>
            contact@cafepeter.com        </div>
     </footer>
 
@@ -982,6 +1023,20 @@
                 toggle.classList.remove('active');
             }
         });
+
+        // Carousel pause/play functionality
+        function toggleCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const button = carousel.querySelector('.pause-play-btn');
+            const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+            if (button.classList.contains('paused')) {
+                bsCarousel.cycle();
+                button.classList.remove('paused');
+            } else {
+                bsCarousel.pause();
+                button.classList.add('paused');
+            }
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
