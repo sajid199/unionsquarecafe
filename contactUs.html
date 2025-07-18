@@ -8,7 +8,7 @@
 	<title>Contact Us | Cafe Peter in Pune</title>
 
 	<meta name="keywords"
-		content="Café Peter, founded in 2010 in Aundh, Pune, pioneered a vibrant dining experience by blending the rich aromas of fresh coffee with the irresistible appeal of gourmet donuts, creating a beloved community hub.">
+		content="Danny Meyer Restaurant, USHG, Union Square Hospitality Group, Cafe Peter, American Restaurant, Private Dining, New American Fare, Union Square Restaurant, Oyster Happy Hour, Oyster Happy Hour NYC, Lunch in NYC, Private Dining Room, NYC Best Restaurants, $1 Oysters NYC, New York">
 	<meta name="description"
 		content="Contact Cafe Peter for inquiries, reservations, or feedback. Reach out via phone, email, or visit us at 101 E 19th St, New York, NY 10003.">
 	<link rel="canonical" href="https://www.unionsquarecafe.com/contactUs/">
@@ -284,7 +284,7 @@
 						const selectorPrefix = selector.split(' ').pop().slice(1);
 						sectionElement.classList
 						.add( /* Number each section, except .col-* classes, ex: .c-split--1 */ !
-							selectorPrefix.startsWith('col-') ?
+							selectorPrefix.startsWith('col-') ?
 							`${selectorPrefix}--${index + 1}` :
 							selectorPrefix, /* Divide each section, ex: .c-split-odd */ index %
 							2 === 0 ? `${selectorPrefix}--odd` :
@@ -296,8 +296,7 @@
 				pairedClassesArray.forEach((selector) => {
 					const sectionElements = document.querySelectorAll(selector);
 					sectionElements.forEach((sectionElement) => {
-						const selectorPrefix = selector.split(' ').pop().slice(
-						1); /* Identify paired sections, except .col-* classes, ex: .c-split--pair */
+						const selectorPrefix = selector.split(' ').pop().slice(1);
 						if (!selectorPrefix.startsWith('col-')) sectionElement.classList.add(
 							`${selectorPrefix}--pair`);
 					});
@@ -312,8 +311,98 @@
 				null;
 		}); /* ====== CUSTOM JAVASCRIPT ====== */
 		document.addEventListener('DOMContentLoaded', () => {
-			/* Paste your code here */ });
+			const form = document.querySelector('.js-form-ajax');
+			const submitButton = form.querySelector('button[type="submit"]');
+			const firstnameInput = document.getElementById('contact_firstname');
+			const lastnameInput = document.getElementById('contact_lastname');
+			const emailInput = document.getElementById('contact_email');
+			const messageInput = document.getElementById('contact_message');
+
+			const nameRegex = /^[A-Za-z\s'-]{2,}$/;
+			const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+			const messageRegex = /^[A-Za-z0-9\s.,!?'-]{10,500}$/;
+
+			function validateField(input, regex, errorElementId, errorMessage) {
+				const errorElement = document.getElementById(errorElementId);
+				if (!regex.test(input.value.trim())) {
+					input.setCustomValidity(errorMessage);
+					errorElement.style.display = 'block';
+					return false;
+				} else {
+					input.setCustomValidity('');
+					errorElement.style.display = 'none';
+					return true;
+				}
+			}
+
+			function validateForm() {
+				const isFirstnameValid = validateField(
+					firstnameInput,
+					nameRegex,
+					'firstname-error',
+					'Please enter a valid first name (letters, spaces, hyphens, or apostrophes, min 2 characters)'
+				);
+				const isLastnameValid = validateField(
+					lastnameInput,
+					nameRegex,
+					'lastname-error',
+					'Please enter a valid last name (letters, spaces, hyphens, or apostrophes, min 2 characters)'
+				);
+				const isEmailValid = validateField(
+					emailInput,
+					emailRegex,
+					'email-error',
+					'Please enter a valid email address'
+				);
+				const isMessageValid = validateField(
+					messageInput,
+					messageRegex,
+					'message-error',
+					'Please enter a message (10-500 characters, letters, numbers, and basic punctuation only)'
+				);
+
+				submitButton.disabled = !(isFirstnameValid && isLastnameValid && isEmailValid && isMessageValid);
+			}
+
+			[firstnameInput, lastnameInput, emailInput, messageInput].forEach(input => {
+				input.addEventListener('input', validateForm);
+			});
+
+			form.addEventListener('submit', (e) => {
+				validateForm();
+				if (!form.checkValidity()) {
+					e.preventDefault();
+					document.querySelector('.form-error-msg').style.display = 'block';
+				} else {
+					document.querySelector('.form-error-msg').style.display = 'none';
+				}
+			});
+		});
 	</script>
+
+	<style>
+		.form-actions button[type="submit"] {
+			display: block !important;
+			opacity: 1 !important;
+			visibility: visible !important;
+		}
+		.form-actions button[type="submit"]:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+		.error-label, .error-message-email {
+			display: none;
+			color: #d32f2f;
+			font-size: 0.875rem;
+			margin-top: 0.25rem;
+		}
+		.form-error-msg {
+			display: none;
+			color: #d32f2f;
+			font-size: 0.875rem;
+			margin-top: 0.5rem;
+		}
+	</style>
 
 	<!--[if lt IE 9]>
 	    <script type="text/javascript" src="https://theme-assets.getbento.com/sensei/4645e41.sensei/assets/js/ltie9.min.js "></script>
@@ -555,47 +644,52 @@
 
 				<div class="form-ui">
 					<label for="contact_firstname">
-						<i class="error-label" id="firstname-error">Please, enter a valid first name</i>
+						<i class="error-label" id="firstname-error">Please enter a valid first name (letters, spaces, hyphens, or apostrophes, min 2 characters)</i>
 						<span class="input-label">First Name
 							<span class="input-label-required">- Required</span>
 						</span>
 						<input id="contact_firstname" class="form-control" type="text" name="firstname" placeholder="First Name"
-							required oninvalid="this.setCustomValidity('Please enter a valid first name')"
+							pattern="[A-Za-z\s'-]{2,}" required
+							oninvalid="this.setCustomValidity('Please enter a valid first name (letters, spaces, hyphens, or apostrophes, min 2 characters)')"
 							oninput="setCustomValidity('')" autocomplete="given-name">
 					</label>
 
 					<label for="contact_lastname">
-						<i class="error-label" id="lastname-error">Please, enter a valid last name</i>
+						<i class="error-label" id="lastname-error">Please enter a valid last name (letters, spaces, hyphens, or apostrophes, min 2 characters)</i>
 						<span class="input-label">Last Name
 							<span class="input-label-required">- Required</span>
 						</span>
-						<input id="contact_lastname" class="form-control" type="text" name="lastname" placeholder="Last Name" required
-							oninvalid="this.setCustomValidity('Please enter a valid last name')"
+						<input id="contact_lastname" class="form-control" type="text" name="lastname" placeholder="Last Name"
+							pattern="[A-Za-z\s'-]{2,}" required
+							oninvalid="this.setCustomValidity('Please enter a valid last name (letters, spaces, hyphens, or apostrophes, min 2 characters)')"
 							oninput="setCustomValidity('')" autocomplete="family-name">
 					</label>
 
 					<label for="contact_email">
-						<i class="error-message-email" id="email-error">Please, enter a valid email</i>
+						<i class="error-message-email" id="email-error">Please enter a valid email address</i>
 						<span class="input-label">Email
 							<span class="input-label-required">- Required</span>
 						</span>
-						<input id="contact_email" class="form-control" type="email" name="email" placeholder="Email" required
-							oninvalid="this.setCustomValidity('Please enter a valid email')" oninput="setCustomValidity('')"
-							autocomplete="email">
+						<input id="contact_email" class="form-control" type="email" name="email" placeholder="Email"
+							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required
+							oninvalid="this.setCustomValidity('Please enter a valid email address')"
+							oninput="setCustomValidity('')" autocomplete="email">
 					</label>
 
 					<label for="contact_message">
-						<i class="error-label" id="message-error">Please, enter a message</i>
+						<i class="error-label" id="message-error">Please enter a message (10-500 characters, letters, numbers, and basic punctuation only)</i>
 						<span class="input-label">Message
 							<span class="input-label-required">- Required</span>
 						</span>
-						<textarea id="contact_message" class="form-control" name="message" placeholder="Your Message" required
-							oninvalid="this.setCustomValidity('Please enter a message')" oninput="setCustomValidity('')"></textarea>
+						<textarea id="contact_message" class="form-control" name="message" placeholder="Your Message"
+							required
+							oninvalid="this.setCustomValidity('Please enter a message (10-500 characters, letters, numbers, and basic punctuation only)')"
+							oninput="setCustomValidity('')"></textarea>
 					</label>
 				</div>
 
 				<div class="form-actions">
-					<button type="submit" class="btn btn-brand-alt" aria-label="Submit">Submit</button>
+					<button type="submit" class="btn btn-brand-alt" aria-label="Submit" disabled>Submit</button>
 					<span class="form-error-msg">Please check errors in the form above</span>
 				</div>
 				<div class="form-success-msg">
@@ -703,7 +797,7 @@
 			</div>
 			<div class="form-ui">
 				<label for="3147309">
-					<i class="error-label" id="firstname-error">Please, enter a valid first name</i>
+					<i class="error-label" id="firstname-error">Please enter a valid first name</i>
 					<span class="input-label">First Name
 						<span class="input-label-required">- Required</span>
 					</span>
@@ -712,7 +806,7 @@
 						oninput="setCustomValidity('')" autocomplete="given-name">
 				</label>
 				<label for="3147310">
-					<i class="error-label" id="lastname-error">Please, enter a valid last name</i>
+					<i class="error-label" id="lastname-error">Please enter a valid last name</i>
 					<span class="input-label">Last Name
 						<span class="input-label-required">- Required</span>
 					</span>
@@ -721,7 +815,7 @@
 						oninput="setCustomValidity('')" autocomplete="family-name">
 				</label>
 				<label for="3147311">
-					<i class="error-message-email" id="email-error">Please, enter a valid email</i>
+					<i class="error-message-email" id="email-error">Please enter a valid email</i>
 					<span class="input-label">Email
 						<span class="input-label-required">- Required</span>
 					</span>
@@ -773,7 +867,7 @@
 							<i class="fa fa-chevron-down"></i>
 						</span>
 					</div>
-					<i class="error-label">Please, select a location</i>
+					<i class="error-label">Please select a location</i>
 				</label>
 				<label for="seats">
 					<span class="input-label" aria-hidden="true">Number of People
@@ -801,7 +895,7 @@
 						<span class="input-label-required">- Required</span>
 					</span>
 					<div data-react-component="accessible-date-picker"></div>
-					<i class="error-label">Please, select a date</i>
+					<i class="error-label">Please select a date</i>
 				</label>
 				<label for="time">
 					<span class="input-label" aria-hidden="true">Time
